@@ -1,16 +1,57 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import Login from "@/pages/auth/Login";
+import Signup from "@/pages/auth/Signup";
+import Dashboard from "@/pages/student/Dashboard";
+import Courses from "@/pages/student/Courses";
+import CourseDetails from "@/pages/student/CourseDetails";
+import MyCourses from "@/pages/student/MyCourses";
+import LessonView from "@/pages/student/LessonView";
+import Certificates from "@/pages/student/Certificates";
+import Settings from "@/pages/student/Settings";
+import Quiz from "@/pages/student/Quiz";
+import StudentLayout from "@/components/layout/StudentLayout";
+import AuthLayout from "@/components/layout/AuthLayout";
 
 function Router() {
   return (
     <Switch>
-      {/* Add pages below */}
-      {/* <Route path="/" component={Home}/> */}
-      {/* Fallback to 404 */}
+      {/* Redirect root to login for now */}
+      <Route path="/">
+        <Redirect to="/auth/login" />
+      </Route>
+
+      {/* Auth Routes */}
+      <Route path="/auth/:path*">
+        <AuthLayout>
+          <Switch>
+            <Route path="/auth/login" component={Login} />
+            <Route path="/auth/signup" component={Signup} />
+          </Switch>
+        </AuthLayout>
+      </Route>
+
+      {/* Student Routes */}
+      <Route path="/student/:path*">
+        <StudentLayout>
+          <Switch>
+            <Route path="/student/dashboard" component={Dashboard} />
+            <Route path="/student/courses" component={Courses} />
+            <Route path="/student/my-courses" component={MyCourses} />
+            <Route path="/student/course/:id" component={CourseDetails} />
+            <Route path="/student/learn/:courseId/:lessonId" component={LessonView} />
+            <Route path="/student/certificates" component={Certificates} />
+            <Route path="/student/settings" component={Settings} />
+            <Route path="/student/quiz/:id" component={Quiz} />
+          </Switch>
+        </StudentLayout>
+      </Route>
+
+      {/* Fallback */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -20,8 +61,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
         <Router />
+        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );
