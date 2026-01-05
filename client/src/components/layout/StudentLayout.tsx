@@ -52,10 +52,10 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
         <Sidebar collapsible="icon" className="border-r border-border/40">
           <SidebarHeader className="h-16 flex items-center justify-center border-b border-border/40 px-6">
             <div className="flex items-center gap-2 font-heading font-bold text-xl text-primary w-full overflow-hidden">
-              <div className="size-8 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center shrink-0 shadow-sm">
-                <span className="font-bold">V</span>
+              <div className="size-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
+                <span className="text-white">L</span>
               </div>
-              <span className="truncate group-data-[collapsible=icon]:hidden text-primary">VTU Online</span>
+              <span className="truncate group-data-[collapsible=icon]:hidden">Lumina</span>
             </div>
           </SidebarHeader>
           <SidebarContent className="px-2 py-4">
