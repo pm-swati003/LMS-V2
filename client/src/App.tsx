@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import Landing from "@/pages/Landing";
 import Login from "@/pages/auth/Login";
 import Signup from "@/pages/auth/Signup";
 import Dashboard from "@/pages/student/Dashboard";
@@ -20,10 +21,8 @@ import AuthLayout from "@/components/layout/AuthLayout";
 function Router() {
   return (
     <Switch>
-      {/* Redirect root to login for now */}
-      <Route path="/">
-        <Redirect to="/auth/login" />
-      </Route>
+      {/* Landing Page */}
+      <Route path="/" component={Landing} />
 
       {/* Auth Routes */}
       <Route path="/auth/:path*">
