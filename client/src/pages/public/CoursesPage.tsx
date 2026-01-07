@@ -179,26 +179,28 @@ export default function CoursesPage() {
           <div className="lg:col-span-3">
              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                {COURSES.map((course) => (
-                 <Card key={course.id} className="group overflow-hidden border-border/50 hover:shadow-lg transition-all duration-300 bg-white">
-                   <div className="aspect-[4/3] bg-muted relative flex items-center justify-center p-8 border-b border-border/40">
-                      {/* Placeholder Image Icon as per design */}
-                      <div className="text-muted-foreground/30 group-hover:text-primary/50 transition-colors">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                          <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                          <circle cx="9" cy="9" r="2"/>
-                          <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
-                        </svg>
-                      </div>
-                   </div>
-                   <CardContent className="p-5 flex flex-col h-[180px]">
-                     <h3 className="font-semibold text-base line-clamp-3 mb-auto group-hover:text-primary transition-colors">
-                       {course.title}
-                     </h3>
-                     <div className="pt-4 mt-auto">
-                       <p className="text-sm text-muted-foreground">Credits : {course.credits}</p>
+                 <Link key={course.id} href={`/courses/${course.id}`}>
+                   <Card className="group overflow-hidden border-border/50 hover:shadow-lg transition-all duration-300 bg-white cursor-pointer h-full">
+                     <div className="aspect-[4/3] bg-muted relative flex items-center justify-center p-8 border-b border-border/40">
+                        {/* Placeholder Image Icon as per design */}
+                        <div className="text-muted-foreground/30 group-hover:text-primary/50 transition-colors">
+                          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                            <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                          </svg>
+                        </div>
                      </div>
-                   </CardContent>
-                 </Card>
+                     <CardContent className="p-5 flex flex-col h-[180px]">
+                       <h3 className="font-semibold text-base line-clamp-3 mb-auto group-hover:text-primary transition-colors">
+                         {course.title}
+                       </h3>
+                       <div className="pt-4 mt-auto">
+                         <p className="text-sm text-muted-foreground">Credits : {course.credits}</p>
+                       </div>
+                     </CardContent>
+                   </Card>
+                 </Link>
                ))}
              </div>
              
