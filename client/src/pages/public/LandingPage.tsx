@@ -2,10 +2,29 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Users, Award, Globe, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, Globe, CheckCircle2, Star, Calendar } from "lucide-react";
 import generatedImage from '@assets/generated_images/modern_university_campus_with_students.png';
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function LandingPage() {
+  const examCirculars = [
+    { title: "Final Semester Exam Schedule Declared", date: "Oct 24, 2025", isNew: true },
+    { title: "Hall Ticket Download Instructions", date: "Oct 20, 2025", isNew: true },
+    { title: "Re-evaluation Results for B.Tech", date: "Oct 15, 2025", isNew: false },
+    { title: "Supplementary Exam Dates Announced", date: "Oct 10, 2025", isNew: false },
+    { title: "Exam Center Change Request Form", date: "Oct 05, 2025", isNew: false },
+    { title: "Guidelines for Online Examinations", date: "Sep 28, 2025", isNew: false },
+  ];
+
+  const admissionCirculars = [
+    { title: "Fall 2026 Application Deadline Extended", date: "Oct 22, 2025", isNew: true },
+    { title: "Entrance Exam Syllabus Update", date: "Oct 18, 2025", isNew: true },
+    { title: "Document Verification Schedule", date: "Oct 12, 2025", isNew: false },
+    { title: "Scholarship Application Open", date: "Oct 08, 2025", isNew: false },
+    { title: "International Student Admission Guidelines", date: "Sep 30, 2025", isNew: false },
+    { title: "Ph.D. Entrance Test Notification", date: "Sep 25, 2025", isNew: false },
+  ];
+
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
@@ -71,6 +90,83 @@ export default function LandingPage() {
                  <p className="text-sm text-muted-foreground font-medium uppercase tracking-wide">{stat.label}</p>
                </div>
              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Circulars Section */}
+      <section className="py-16 bg-background border-b border-border/40">
+        <div className="container mx-auto px-4 md:px-8">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">Circulars</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Exam Circulars Panel */}
+            <Card className="border-border/60 shadow-sm">
+              <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
+                <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                  Exam Circulars
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <ScrollArea className="h-[300px] w-full p-4">
+                  <div className="space-y-1">
+                    {examCirculars.map((item, i) => (
+                      <div 
+                        key={i} 
+                        className="group flex flex-col gap-1 p-3 rounded-md hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <span className="font-medium text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                            {item.title}
+                          </span>
+                          {item.isNew && (
+                            <Badge variant="destructive" className="text-[10px] px-1.5 py-0 h-5 shrink-0">NEW</Badge>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Calendar className="size-3" />
+                          <span>{item.date}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </CardContent>
+            </Card>
+
+            {/* Admissions Circulars Panel */}
+            <Card className="border-border/60 shadow-sm">
+              <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
+                <CardTitle className="text-lg font-semibold flex items-center gap-2">
+                  Admissions Circulars
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <ScrollArea className="h-[300px] w-full p-4">
+                  <div className="space-y-1">
+                    {admissionCirculars.map((item, i) => (
+                      <div 
+                        key={i} 
+                        className="group flex flex-col gap-1 p-3 rounded-md hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <span className="font-medium text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                            {item.title}
+                          </span>
+                          {item.isNew && (
+                            <Badge variant="destructive" className="text-[10px] px-1.5 py-0 h-5 shrink-0">NEW</Badge>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                          <Calendar className="size-3" />
+                          <span>{item.date}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
