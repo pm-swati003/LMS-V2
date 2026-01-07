@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, GraduationCap, Menu, X, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { NewsTicker } from "@/components/ui/news-ticker";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -14,6 +15,14 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     { name: "Admissions", href: "/admissions" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  const announcements = [
+    "Admissions for Fall 2026 are now open!",
+    "New Master's in Data Science launching soon.",
+    "Virtual Open House scheduled for November 15th.",
+    "Student research showcase winners announced.",
+    "Campus library renovation completed."
   ];
 
   return (
@@ -78,6 +87,9 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
           </Sheet>
         </div>
       </header>
+
+      {/* Announcement Ticker */}
+      <NewsTicker items={announcements} />
 
       {/* Main Content */}
       <main className="flex-1">
