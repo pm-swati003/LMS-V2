@@ -16,13 +16,17 @@ import Settings from "@/pages/student/Settings";
 import Quiz from "@/pages/student/Quiz";
 import StudentLayout from "@/components/layout/StudentLayout";
 import AuthLayout from "@/components/layout/AuthLayout";
+import LandingPage from "@/pages/public/LandingPage";
+import PublicLayout from "@/components/layout/PublicLayout";
 
 function Router() {
   return (
     <Switch>
-      {/* Redirect root to login for now */}
+      {/* Public Landing Page */}
       <Route path="/">
-        <Redirect to="/auth/login" />
+        <PublicLayout>
+          <LandingPage />
+        </PublicLayout>
       </Route>
 
       {/* Auth Routes */}
