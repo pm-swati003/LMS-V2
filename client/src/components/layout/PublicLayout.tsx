@@ -28,11 +28,9 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       name: "Programs", 
       href: "/programs",
       children: [
-        { name: "All Programs", href: "/programs" },
-        { name: "Undergraduate", href: "/programs?level=undergraduate" },
-        { name: "Postgraduate", href: "/programs?level=postgraduate" },
-        { name: "Diploma Programs", href: "/programs?level=diploma" },
-        { name: "Certificates", href: "/programs?level=certificate" },
+        { name: "Honours", href: "/programs/honours" },
+        { name: "Minors", href: "/programs/minors" },
+        { name: "Skill Enhancement Programs", href: "/programs/skill-enhancement" },
       ]
     },
     { name: "Courses", href: "/courses" },

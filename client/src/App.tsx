@@ -63,6 +63,25 @@ function Router() {
         </PublicLayout>
       </Route>
 
+      {/* Program Categories Routes */}
+      <Route path="/programs/honours">
+        <PublicLayout>
+          <ProgramsPage />
+        </PublicLayout>
+      </Route>
+
+      <Route path="/programs/minors">
+        <PublicLayout>
+          <ProgramsPage />
+        </PublicLayout>
+      </Route>
+
+      <Route path="/programs/skill-enhancement">
+        <PublicLayout>
+          <ProgramsPage />
+        </PublicLayout>
+      </Route>
+
       {/* MOOC Course Details Page */}
       <Route path="/courses/:courseId">
         <PublicLayout>
