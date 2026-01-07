@@ -72,27 +72,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 border-b border-border/40 bg-muted/20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-             {[
-               { label: "Students Enrolled", value: "15k+", icon: Users },
-               { label: "Online Courses", value: "250+", icon: BookOpen },
-               { label: "Expert Faculty", value: "120+", icon: Award },
-               { label: "Countries Represented", value: "85+", icon: Globe },
-             ].map((stat, i) => (
-               <div key={i} className="space-y-2">
-                 <div className="mx-auto size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3">
-                   <stat.icon className="size-6" />
-                 </div>
-                 <h3 className="text-3xl font-heading font-bold">{stat.value}</h3>
-                 <p className="text-sm text-muted-foreground font-medium uppercase tracking-wide">{stat.label}</p>
-               </div>
-             ))}
-          </div>
-        </div>
-      </section>
 
       {/* Circulars Section */}
       <section className="py-16 bg-background border-b border-border/40">
@@ -239,7 +218,9 @@ export default function LandingPage() {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg">View All Programs</Button>
+            <Link href="/programs">
+              <Button variant="outline" size="lg">View All Programs</Button>
+            </Link>
           </div>
         </div>
       </section>
