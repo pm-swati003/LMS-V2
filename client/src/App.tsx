@@ -19,6 +19,7 @@ import AuthLayout from "@/components/layout/AuthLayout";
 import LandingPage from "@/pages/public/LandingPage";
 import ContactPage from "@/pages/public/ContactPage";
 import CoursesPage from "@/pages/public/CoursesPage";
+import CourseDetailsPage from "@/pages/public/CourseDetailsPage";
 import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
 import PublicLayout from "@/components/layout/PublicLayout";
 
@@ -46,13 +47,14 @@ function Router() {
         </PublicLayout>
       </Route>
 
-      {/* Program/Course Details Page - Shared for now */}
+      {/* MOOC Course Details Page */}
       <Route path="/courses/:courseId">
         <PublicLayout>
-          <CourseProgramDetailsPage />
+          <CourseDetailsPage />
         </PublicLayout>
       </Route>
       
+      {/* Degree Program Details Page */}
       <Route path="/programs/:programId">
         <PublicLayout>
           <CourseProgramDetailsPage />
