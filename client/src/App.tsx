@@ -17,6 +17,7 @@ import Quiz from "@/pages/student/Quiz";
 import StudentLayout from "@/components/layout/StudentLayout";
 import AuthLayout from "@/components/layout/AuthLayout";
 import LandingPage from "@/pages/public/LandingPage";
+import ContactPage from "@/pages/public/ContactPage";
 import PublicLayout from "@/components/layout/PublicLayout";
 
 function Router() {
@@ -26,6 +27,13 @@ function Router() {
       <Route path="/">
         <PublicLayout>
           <LandingPage />
+        </PublicLayout>
+      </Route>
+
+      {/* Public Contact Page */}
+      <Route path="/contact">
+        <PublicLayout>
+          <ContactPage />
         </PublicLayout>
       </Route>
 
