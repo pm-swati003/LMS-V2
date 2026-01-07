@@ -1,9 +1,10 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { BookOpen, GraduationCap, Menu, X, Facebook, Twitter, Linkedin, Instagram, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NewsTicker } from "@/components/ui/news-ticker";
+import { Footer } from "@/components/layout/Footer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -163,68 +164,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border/40 bg-muted/30 pt-16 pb-8">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 font-heading font-bold text-xl text-primary">
-                <div className="size-8 rounded-lg bg-primary flex items-center justify-center text-white shrink-0">
-                  V
-                </div>
-                <span>VTU online</span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Empowering the next generation of leaders through accessible, world-class online education.
-              </p>
-              <div className="flex gap-4 text-muted-foreground">
-                <Facebook className="size-5 hover:text-primary cursor-pointer transition-colors" />
-                <Twitter className="size-5 hover:text-primary cursor-pointer transition-colors" />
-                <Linkedin className="size-5 hover:text-primary cursor-pointer transition-colors" />
-                <Instagram className="size-5 hover:text-primary cursor-pointer transition-colors" />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Academics</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary hover:underline">Undergraduate</a></li>
-                <li><a href="#" className="hover:text-primary hover:underline">Graduate</a></li>
-                <li><a href="#" className="hover:text-primary hover:underline">Online Degrees</a></li>
-                <li><a href="#" className="hover:text-primary hover:underline">Certificates</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Admissions</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary hover:underline">How to Apply</a></li>
-                <li><a href="#" className="hover:text-primary hover:underline">Tuition & Fees</a></li>
-                <li><a href="#" className="hover:text-primary hover:underline">Financial Aid</a></li>
-                <li><a href="#" className="hover:text-primary hover:underline">Deadlines</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>123 University Ave</li>
-                <li>Cambridge, MA 02138</li>
-                <li>+1 (555) 123-4567</li>
-                <li>info@vtuonline.edu</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© 2026 VTU online. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-foreground">Privacy Policy</a>
-              <a href="#" className="hover:text-foreground">Terms of Service</a>
-              <a href="#" className="hover:text-foreground">Accessibility</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
