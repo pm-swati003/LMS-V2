@@ -24,16 +24,16 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
   const navLinks: NavItem[] = [
     { name: "Home", href: "/" },
     { 
-      name: "Courses", 
-      href: "/courses",
+      name: "Programs", 
+      href: "#",
       children: [
-        { name: "MOOC Resources", href: "/courses" },
-        { name: "Undergraduate", href: "/courses/undergraduate" },
-        { name: "Postgraduate", href: "/courses/postgraduate" },
-        { name: "Diploma Programs", href: "/courses/diploma" },
-        { name: "Certificates", href: "/courses/certificates" },
+        { name: "Undergraduate", href: "/programs/undergraduate" },
+        { name: "Postgraduate", href: "/programs/postgraduate" },
+        { name: "Diploma Programs", href: "/programs/diploma" },
+        { name: "Certificates", href: "/programs/certificates" },
       ]
     },
+    { name: "Courses", href: "/courses" },
     { name: "Admissions", href: "/admissions" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },

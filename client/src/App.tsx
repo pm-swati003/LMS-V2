@@ -39,15 +39,21 @@ function Router() {
         </PublicLayout>
       </Route>
 
-      {/* Public Courses Page */}
+      {/* Public Courses Page - MOOC List */}
       <Route path="/courses">
         <PublicLayout>
           <CoursesPage />
         </PublicLayout>
       </Route>
 
-      {/* Course Details Page */}
+      {/* Program/Course Details Page - Shared for now */}
       <Route path="/courses/:courseId">
+        <PublicLayout>
+          <CourseProgramDetailsPage />
+        </PublicLayout>
+      </Route>
+      
+      <Route path="/programs/:programId">
         <PublicLayout>
           <CourseProgramDetailsPage />
         </PublicLayout>
