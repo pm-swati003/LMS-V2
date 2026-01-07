@@ -28,6 +28,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       name: "Programs", 
       href: "/programs",
       children: [
+        { name: "All Programs", href: "/programs" },
         { name: "Honours", href: "/programs/honours" },
         { name: "Minors", href: "/programs/minors" },
         { name: "Skill Enhancement Programs", href: "/programs/skill-enhancement" },
