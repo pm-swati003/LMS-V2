@@ -35,8 +35,8 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     },
     { name: "Courses", href: "/courses" },
     { name: "Admissions", href: "/admissions" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Exams", href: "/exams" },
+    { name: "Academics", href: "/academics" },
   ];
 
   const announcements = [
