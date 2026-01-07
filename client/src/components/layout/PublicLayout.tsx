@@ -11,7 +11,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Programs", href: "/programs" },
+    { name: "Courses", href: "/courses" },
     { name: "Admissions", href: "/admissions" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
