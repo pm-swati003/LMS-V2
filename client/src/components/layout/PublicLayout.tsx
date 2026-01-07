@@ -27,6 +27,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       name: "Courses", 
       href: "/courses",
       children: [
+        { name: "MOOC Resources", href: "/courses" },
         { name: "Undergraduate", href: "/courses/undergraduate" },
         { name: "Postgraduate", href: "/courses/postgraduate" },
         { name: "Diploma Programs", href: "/courses/diploma" },
