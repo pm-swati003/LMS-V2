@@ -8,8 +8,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       <div className="flex flex-1 flex-col justify-center px-8 py-12 sm:px-12 lg:flex-none lg:w-1/2 xl:w-[480px]">
         <div className="mx-auto w-full max-w-sm">
           <div className="mb-8 flex items-center gap-2 font-heading font-bold text-2xl text-primary">
-            <div className="size-10 rounded-xl bg-primary flex items-center justify-center text-white">L</div>
-            Lumina
+            <div className="size-10 rounded-xl bg-primary flex items-center justify-center text-white">V</div>
+            VTU online
           </div>
           {children}
         </div>
