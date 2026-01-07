@@ -1,0 +1,128 @@
+I want to ADD a new “About Us” page that visually and structurally matches the provided design image.
+
+🔒 STRICT RULES (Must Follow Exactly)
+
+DO NOT modify any existing pages, navbar UI, footer, layout, or shared components.
+
+DO NOT change index.css, App.jsx, main.jsx, Tailwind config, or global styles.
+
+Only ADD new files if required (page + small reusable components).
+
+Reuse existing Tailwind colors, spacing, typography, and button styles.
+
+Navbar and footer must remain exactly the same.
+
+🔗 Navigation & Routing
+
+The existing About link in the navbar should navigate to /about
+
+Use the existing routing setup (React Router)
+
+SPA navigation only (no page reload)
+
+Do not refactor existing routes
+
+📄 Page Structure (Match Design Closely)
+1️⃣ Hero / Banner Section
+
+Full-width top banner
+
+Dark purple gradient background
+
+Centered page title: About Us
+
+Breadcrumb below title: Home / About Us
+
+Same height, spacing, and typography as shown in the image
+
+2️⃣ University Overview Section
+
+Title: Visvesvaraya Technological University
+
+Subtitle: Public university in Belagavi, Karnataka
+
+Two-column layout:
+
+Left: long descriptive text block
+
+Right: image placeholder card
+
+Proper line-height and readable typography
+
+3️⃣ Regional Centers Section
+
+Section title: Regional Centers
+
+Horizontal timeline / step indicator (1–4)
+
+Cards for:
+
+Belagavi
+
+Bengaluru
+
+Kalaburagi
+
+Mysuru
+
+Uniform card size and spacing
+
+4️⃣ About Centre for Online Education
+
+Two-column layout:
+
+Left: image placeholder
+
+Right: descriptive content
+
+Subsection: Mission of COE
+
+Bullet/numbered list of mission points
+
+5️⃣ Hon’ble Vice Chancellor Message
+
+Card-style layout
+
+Image placeholder on one side
+
+Text content on the other
+
+Highlight name and designation
+
+6️⃣ Officers of the University
+
+Grid layout of profile cards
+
+Each card contains:
+
+Image placeholder
+
+Name
+
+Designation
+
+Responsive grid (desktop / tablet / mobile)
+
+7️⃣ Footer
+
+Keep the existing footer unchanged
+
+🎨 UI & UX Guidelines
+
+Clean academic / university-style design
+
+Consistent spacing, hierarchy, and alignment
+
+Tailwind CSS utilities only (no inline styles)
+
+Fully responsive across devices
+
+📁 File & Code Expectations
+
+Create AboutPage.jsx (or similar)
+
+Export as default
+
+Use static placeholder images and text
+
+Code should be clean, modular, and production-ready

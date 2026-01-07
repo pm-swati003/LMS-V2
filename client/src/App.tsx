@@ -18,6 +18,7 @@ import StudentLayout from "@/components/layout/StudentLayout";
 import AuthLayout from "@/components/layout/AuthLayout";
 import LandingPage from "@/pages/public/LandingPage";
 import ContactPage from "@/pages/public/ContactPage";
+import AboutPage from "@/pages/public/AboutPage";
 import CoursesPage from "@/pages/public/CoursesPage";
 import CourseDetailsPage from "@/pages/public/CourseDetailsPage";
 import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
@@ -37,6 +38,13 @@ function Router() {
       <Route path="/contact">
         <PublicLayout>
           <ContactPage />
+        </PublicLayout>
+      </Route>
+
+      {/* Public About Page */}
+      <Route path="/about">
+        <PublicLayout>
+          <AboutPage />
         </PublicLayout>
       </Route>
 
