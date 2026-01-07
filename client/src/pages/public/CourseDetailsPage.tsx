@@ -16,7 +16,8 @@ import {
   Award,
   Download,
   BarChart,
-  Layout
+  Layout,
+  MessageCircle
 } from "lucide-react";
 
 // Mock Data matching the design
@@ -38,9 +39,15 @@ const COURSE_DETAILS = {
   certificate: true,
   lifetimeAccess: true,
   whatYouWillLearn: [
-    "Architecture, Civil and Design"
+    "Fundamentals of renewable energy sources (solar, wind, hydro).",
+    "Grid integration of renewable energy.",
+    "IoT applications in energy monitoring.",
+    "Hands-on projects on energy optimization.",
+    "Smart grid technologies and energy management.",
+    "Power distribution and demand-side management.",
+    "Case studies on real-world implementations."
   ],
-  description: "The courses discusses sustainability principles and concepts from across various domains. Elaborates on sustainability definitions, aspects, dynamic nature of it, and its application in everyday life. Further, it discusses global efforts from UNFCCC and other agencies for developing context-based solutions and climate change mitigation efforts. Involves field visits, real-life case studies, and assignments. Includes study on building technologies to improve on efficiency and response to surroundings. Focusses basic scientific principles underlying the environmental performance of the built environment and designing for efficacy on EIA/LCA."
+  description: "This course explores how renewable energy can be effectively integrated into smart grids using modern monitoring and optimization technologies. It covers grid infrastructure, energy storage, demand response, and IoT applications in power distribution. Students will learn practical strategies to design and implement energy-efficient systems through hands-on projects and case studies."
 };
 
 export default function CourseDetailsPage() {
@@ -96,54 +103,155 @@ export default function CourseDetailsPage() {
           {/* Main Content */}
           <div className="lg:col-span-2">
             <Tabs defaultValue="overview" className="w-full">
-              <TabsList className="w-full justify-start border-b border-gray-200 bg-transparent p-0 mb-8 h-auto rounded-none">
+              <TabsList className="w-full justify-start border-b border-gray-200 bg-transparent p-0 mb-8 h-auto rounded-none overflow-x-auto">
                 {["Overview", "Curriculum", "Discussion", "Review", "Instructor"].map((tab) => (
                   <TabsTrigger 
                     key={tab} 
                     value={tab.toLowerCase()}
-                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-indigo-600 data-[state=active]:text-indigo-600 data-[state=active]:shadow-none px-6 py-3 bg-transparent text-gray-500 font-medium"
+                    className="rounded-none border-b-2 border-transparent data-[state=active]:border-indigo-600 data-[state=active]:text-indigo-600 data-[state=active]:shadow-none px-6 py-3 bg-transparent text-gray-500 font-medium whitespace-nowrap"
                   >
                     {tab}
                   </TabsTrigger>
                 ))}
               </TabsList>
 
-              <TabsContent value="overview" className="space-y-8">
+              <TabsContent value="overview" className="space-y-8 animate-in fade-in duration-300">
                 <div>
                   <h2 className="text-2xl font-bold font-heading mb-6">What you will learn</h2>
-                  <div className="grid gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {course.whatYouWillLearn.map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <CheckCircle2 className="size-5 text-green-500 shrink-0" />
-                        <span className="text-gray-700 font-medium">"{item}"</span>
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="mt-1 bg-green-100 rounded-full p-1">
+                          <CheckCircle2 className="size-4 text-green-600 shrink-0" />
+                        </div>
+                        <span className="text-gray-700 leading-relaxed text-sm font-medium">{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="prose max-w-none text-gray-600 leading-relaxed">
+                <div className="prose max-w-none text-gray-600 leading-relaxed text-sm">
                   <p>{course.description}</p>
                 </div>
               </TabsContent>
 
-              <TabsContent value="curriculum">
+              <TabsContent value="curriculum" className="animate-in fade-in duration-300">
                 <div className="p-8 border border-gray-100 rounded-lg text-center text-gray-500">
                   Curriculum content placeholder
                 </div>
               </TabsContent>
-              <TabsContent value="discussion">
-                <div className="p-8 border border-gray-100 rounded-lg text-center text-gray-500">
-                  Discussion forum placeholder
+
+              <TabsContent value="discussion" className="animate-in fade-in duration-300">
+                <div className="border border-gray-100 rounded-lg p-6 bg-white shadow-sm">
+                  <div className="flex gap-4">
+                    <div className="shrink-0">
+                      <div className="size-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-400">
+                        <Users className="size-6 fill-current" />
+                      </div>
+                    </div>
+                    <div className="flex-1 space-y-3">
+                      <div className="font-bold text-gray-900 uppercase">CHANDAN KUMAR L</div>
+                      <div className="bg-gray-50/80 rounded-lg p-4 text-gray-700 text-sm">
+                        Please share notes and slides of each module
+                      </div>
+                      <div className="flex items-center justify-between pt-1">
+                        <span className="text-xs text-gray-500">1 year ago</span>
+                        <div className="flex items-center gap-1 text-gray-400 hover:text-gray-600 cursor-pointer">
+                          <MessageCircle className="size-4" />
+                          <span className="text-xs font-medium">0</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </TabsContent>
-              <TabsContent value="review">
-                <div className="p-8 border border-gray-100 rounded-lg text-center text-gray-500">
-                  Reviews placeholder
+
+              <TabsContent value="review" className="animate-in fade-in duration-300">
+                <div className="border border-gray-100 rounded-lg p-8 bg-white shadow-sm flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                  <div className="text-center md:text-left space-y-2 shrink-0">
+                    <div className="text-5xl font-bold text-gray-900">0.0</div>
+                    <div className="flex text-yellow-400 justify-center md:justify-start gap-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="size-4 text-gray-300 fill-gray-100" />
+                      ))}
+                    </div>
+                    <div className="text-gray-500 font-medium text-sm text-center">0 Reviews</div>
+                  </div>
+
+                  <div className="flex-1 w-full space-y-3">
+                    {[5, 4, 3, 2, 1].map((rating) => (
+                      <div key={rating} className="flex items-center gap-4">
+                        <span className="font-medium text-gray-700 w-3 text-sm">{rating}</span>
+                        <div className="flex text-yellow-400 gap-1">
+                           {[1, 2, 3, 4, 5].map((s) => (
+                             <Star key={s} className="size-4 text-gray-300 fill-gray-100" />
+                           ))}
+                        </div>
+                        <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-gray-300 w-0" />
+                        </div>
+                        <span className="text-sm text-gray-400 w-4 text-right">0</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </TabsContent>
-              <TabsContent value="instructor">
-                <div className="p-8 border border-gray-100 rounded-lg text-center text-gray-500">
-                  Instructor details placeholder
+
+              <TabsContent value="instructor" className="animate-in fade-in duration-300">
+                <div className="space-y-8">
+                  <h2 className="text-2xl font-bold font-heading">Meet Your Instructor</h2>
+                  
+                  <div className="border border-gray-100 rounded-lg p-6 bg-white shadow-sm">
+                    <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
+                      
+                      {/* Profile Section */}
+                      <div className="space-y-4 shrink-0">
+                        <h3 className="font-bold text-lg text-gray-900">Edutainer India</h3>
+                        <div className="flex items-center gap-4">
+                          <div className="size-20 rounded-full bg-blue-500 flex items-center justify-center text-white p-4">
+                            {/* Owl-like simple icon */}
+                            <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-4.41 3.59-8 8-8s8 3.59 8 8-4.41 8-8 8zm-5-9c.83 0 1.5-.67 1.5-1.5S7.83 8 7 8s-1.5.67-1.5 1.5S6.17 11 7 11zm10 0c.83 0 1.5-.67 1.5-1.5S17.83 8 17 8s-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm-5 4c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z" />
+                            </svg>
+                          </div>
+                          <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-sm text-xs font-semibold uppercase tracking-wide">Instructor</span>
+                        </div>
+                      </div>
+
+                      {/* Stats Card */}
+                      <div className="flex-1 w-full md:w-auto md:ml-auto">
+                        <div className="border border-gray-100 rounded-lg p-6 grid grid-cols-2 gap-x-12 gap-y-6 bg-white">
+                          <div className="flex items-center gap-3">
+                            <Star className="size-5 text-gray-600" />
+                            <div>
+                              <div className="font-bold text-gray-900">4.5 Rating</div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                             <Award className="size-5 text-gray-600" />
+                            <div>
+                              <div className="font-bold text-gray-900">60</div>
+                              <div className="text-xs text-gray-500">Courses</div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3">
+                             <Users className="size-5 text-gray-600" />
+                            <div>
+                              <div className="font-bold text-gray-900">2525</div>
+                              <div className="text-xs text-gray-500">Students</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h4 className="font-bold text-gray-900 text-base">About Instructor</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed text-justify">
+                        Why Edutainer is Best? Edutainer is one of the biggest online education portals which makes you industry ready by building skills for technological and professional challenges. It focuses on industrial expectation and result oriented approach by providing end-to-end practical knowledge program by providing the most affordable courses. Edutainer assures courses which provide the most demanded and highest paying jobs in the industry. Undoubtedly, Edutainer is a pioneer in the field of technological study that provides the students with guidance under industrial professionals making them well-informed with the real operational procedures. After the successful completion of the enrolled course, the students get certified from Edutainer with references of leading organizations to get placed in them. So today, "Make a pledge to color your career path with technical courses from Edutainer". Our Mission At Edutainer India, our mission is to empower individuals with the knowledge and skills they need to achieve their personal and professional goals. We believe that education is a powerful tool that can transform lives and create positive change in society. We are committed to making quality education accessible to all, regardless of their background or location, by offering a wide range of online courses in various disciplines.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </TabsContent>
             </Tabs>
