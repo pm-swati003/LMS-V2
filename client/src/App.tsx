@@ -24,11 +24,14 @@ import ProgramsPage from "@/pages/public/ProgramsPage";
 import CourseDetailsPage from "@/pages/public/CourseDetailsPage";
 import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
 import PublicLayout from "@/components/layout/PublicLayout";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 function Router() {
   return (
-    <Switch>
-      {/* Public Landing Page */}
+    <>
+      <ScrollToTop />
+      <Switch>
+        {/* Public Landing Page */}
       <Route path="/">
         <PublicLayout>
           <LandingPage />
@@ -125,6 +128,7 @@ function Router() {
       {/* Fallback */}
       <Route component={NotFound} />
     </Switch>
+    </>
   );
 }
 
