@@ -20,6 +20,7 @@ import LandingPage from "@/pages/public/LandingPage";
 import ContactPage from "@/pages/public/ContactPage";
 import AboutPage from "@/pages/public/AboutPage";
 import CoursesPage from "@/pages/public/CoursesPage";
+import ProgramsPage from "@/pages/public/ProgramsPage";
 import CourseDetailsPage from "@/pages/public/CourseDetailsPage";
 import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
 import PublicLayout from "@/components/layout/PublicLayout";
@@ -52,6 +53,13 @@ function Router() {
       <Route path="/courses">
         <PublicLayout>
           <CoursesPage />
+        </PublicLayout>
+      </Route>
+
+      {/* Public Programs Page - All Programs List */}
+      <Route path="/programs">
+        <PublicLayout>
+          <ProgramsPage />
         </PublicLayout>
       </Route>
 

@@ -26,12 +26,13 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     { name: "Home", href: "/" },
     { 
       name: "Programs", 
-      href: "#",
+      href: "/programs",
       children: [
-        { name: "Undergraduate", href: "/programs/undergraduate" },
-        { name: "Postgraduate", href: "/programs/postgraduate" },
-        { name: "Diploma Programs", href: "/programs/diploma" },
-        { name: "Certificates", href: "/programs/certificates" },
+        { name: "All Programs", href: "/programs" },
+        { name: "Undergraduate", href: "/programs?level=undergraduate" },
+        { name: "Postgraduate", href: "/programs?level=postgraduate" },
+        { name: "Diploma Programs", href: "/programs?level=diploma" },
+        { name: "Certificates", href: "/programs?level=certificate" },
       ]
     },
     { name: "Courses", href: "/courses" },

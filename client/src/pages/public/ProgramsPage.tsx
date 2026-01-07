@@ -1,0 +1,219 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Link } from "wouter";
+import { Grid, List } from "lucide-react";
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+
+// Mock Data for Programs
+const PROGRAMS = [
+  { id: 1, title: "Bachelor of Computer Applications (BCA)", level: "Undergraduate", duration: "3 Years", category: "Technology" },
+  { id: 2, title: "Master of Business Administration (MBA)", level: "Postgraduate", duration: "2 Years", category: "Management" },
+  { id: 3, title: "Bachelor of Business Administration (BBA)", level: "Undergraduate", duration: "3 Years", category: "Management" },
+  { id: 4, title: "Master of Computer Applications (MCA)", level: "Postgraduate", duration: "2 Years", category: "Technology" },
+  { id: 5, title: "Diploma in Digital Marketing", level: "Diploma", duration: "1 Year", category: "Marketing" },
+  { id: 6, title: "Certificate in Data Science", level: "Certificate", duration: "6 Months", category: "Data Science" },
+  { id: 7, title: "Bachelor of Arts in Psychology", level: "Undergraduate", duration: "3 Years", category: "Arts" },
+  { id: 8, title: "Master of Science in Artificial Intelligence", level: "Postgraduate", duration: "2 Years", category: "Technology" },
+  { id: 9, title: "Post Graduate Diploma in Management", level: "Diploma", duration: "1 Year", category: "Management" },
+  { id: 10, title: "Certificate in Cyber Security", level: "Certificate", duration: "6 Months", category: "Technology" },
+  { id: 11, title: "Bachelor of Commerce (General)", level: "Undergraduate", duration: "3 Years", category: "Commerce" },
+  { id: 12, title: "Master of Arts in English Literature", level: "Postgraduate", duration: "2 Years", category: "Arts" },
+];
+
+export default function ProgramsPage() {
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  return (
+    <div className="animate-in fade-in duration-500 bg-slate-50 dark:bg-slate-900/10 min-h-screen">
+      {/* 1. Hero Section */}
+      <section className="relative bg-slate-900 text-white py-20 overflow-hidden">
+        {/* Abstract Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-slate-900 opacity-90"></div>
+          {/* Decorative lines similar to design */}
+          <svg className="absolute w-full h-full text-white/5 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+             <path d="M-10 80 Q 50 20 110 80" stroke="currentColor" strokeWidth="0.5" fill="none" />
+             <path d="M-10 90 Q 50 30 110 90" stroke="currentColor" strokeWidth="0.5" fill="none" />
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">All Programs</h1>
+          <div className="flex items-center justify-center gap-2 text-sm text-slate-300">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white">Programs</span>
+            <span>/</span>
+            <span className="text-white font-medium">All Programs</span>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 md:px-8 py-8 md:py-12">
+        {/* 2. Filters & Sorting Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-sm font-medium text-muted-foreground mr-2">Quick Filters:</span>
+            {["Reset All", "Undergraduate", "Postgraduate", "Diploma", "Certificate"].map((filter, i) => (
+              <Badge 
+                key={filter} 
+                variant={i === 0 ? "secondary" : "outline"} 
+                className={`cursor-pointer px-4 py-1.5 rounded-full text-sm font-normal hover:bg-primary hover:text-white transition-colors ${i === 0 ? 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300' : 'bg-white'}`}
+              >
+                {filter}
+              </Badge>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 w-full md:w-auto">
+             <div className="text-sm text-muted-foreground whitespace-nowrap hidden sm:block">Sort by:</div>
+             <Select defaultValue="default">
+               <SelectTrigger className="w-full md:w-[180px] bg-white">
+                 <SelectValue placeholder="Sort Order" />
+               </SelectTrigger>
+               <SelectContent>
+                 <SelectItem value="default">Default</SelectItem>
+                 <SelectItem value="newest">Newest First</SelectItem>
+                 <SelectItem value="popular">Most Popular</SelectItem>
+               </SelectContent>
+             </Select>
+             <div className="flex border rounded-md bg-white">
+               <Button 
+                variant="ghost" 
+                size="icon" 
+                className={`h-9 w-9 rounded-none rounded-l-md ${viewMode === 'grid' ? 'bg-muted' : ''}`}
+                onClick={() => setViewMode('grid')}
+              >
+                 <Grid className="size-4" />
+               </Button>
+               <Separator orientation="vertical" className="h-9" />
+               <Button 
+                variant="ghost" 
+                size="icon" 
+                className={`h-9 w-9 rounded-none rounded-r-md ${viewMode === 'list' ? 'bg-muted' : ''}`}
+                onClick={() => setViewMode('list')}
+              >
+                 <List className="size-4" />
+               </Button>
+             </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* 3. Left Sidebar (Filters Panel) */}
+          <div className="lg:col-span-1 space-y-6">
+            <Card className="border-border/50 shadow-sm">
+              <CardContent className="p-6 space-y-6">
+                
+                {/* Program Level */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-semibold bg-primary text-white px-3 py-1.5 rounded text-sm w-full">Program Level</h3>
+                  </div>
+                  <div className="space-y-2 pl-1">
+                    {["Undergraduate", "Postgraduate", "Diploma", "Certificate", "Ph.D."].map((item, i) => (
+                      <div key={i} className="flex items-center space-x-2">
+                        <Checkbox id={`level-${i}`} />
+                        <Label htmlFor={`level-${i}`} className="text-sm font-normal text-muted-foreground cursor-pointer hover:text-primary">{item}</Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <Separator />
+
+                {/* Category / Discipline */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                     <h3 className="font-semibold bg-primary text-white px-3 py-1.5 rounded text-sm w-full">Discipline</h3>
+                  </div>
+                  <div className="space-y-2 pl-1">
+                    {["Technology", "Management", "Arts & Humanities", "Science", "Commerce", "Health Sciences"].map((item, i) => (
+                      <div key={i} className="flex items-center space-x-2">
+                        <Checkbox id={`cat-${i}`} />
+                        <Label htmlFor={`cat-${i}`} className="text-sm font-normal text-muted-foreground cursor-pointer hover:text-primary">{item}</Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <Separator />
+
+                 {/* Duration */}
+                 <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                     <h3 className="font-semibold bg-primary text-white px-3 py-1.5 rounded text-sm w-full">Duration</h3>
+                  </div>
+                  <div className="space-y-2 pl-1">
+                    {["3 Years", "2 Years", "1 Year", "6 Months"].map((item, i) => (
+                      <div key={i} className="flex items-center space-x-2">
+                        <Checkbox id={`dur-${i}`} />
+                        <Label htmlFor={`dur-${i}`} className="text-sm font-normal text-muted-foreground cursor-pointer hover:text-primary">{item}</Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* 4. Right Content Area (Programs Grid) */}
+          <div className="lg:col-span-3">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+               {PROGRAMS.map((program) => (
+                 <Link key={program.id} href={`/programs/${program.id}`}>
+                   <Card className="group overflow-hidden border-border/50 hover:shadow-lg transition-all duration-300 bg-white cursor-pointer h-full">
+                     <div className="aspect-[4/3] bg-muted relative flex items-center justify-center p-8 border-b border-border/40">
+                        {/* Placeholder Image Icon as per design */}
+                        <div className="text-muted-foreground/30 group-hover:text-primary/50 transition-colors">
+                          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M22 10v6M2 10v6" />
+                            <path d="M2 10l10-5 10 5-10 5z" />
+                            <path d="M12 15v6" />
+                          </svg>
+                        </div>
+                     </div>
+                     <CardContent className="p-5 flex flex-col h-[180px]">
+                       <div className="mb-2">
+                          <Badge variant="secondary" className="text-xs font-normal">
+                            {program.level}
+                          </Badge>
+                       </div>
+                       <h3 className="font-semibold text-lg line-clamp-2 mb-auto group-hover:text-primary transition-colors">
+                         {program.title}
+                       </h3>
+                       <div className="pt-4 mt-auto flex items-center justify-between text-sm text-muted-foreground">
+                         <span>{program.duration}</span>
+                         <span>{program.category}</span>
+                       </div>
+                     </CardContent>
+                   </Card>
+                 </Link>
+               ))}
+             </div>
+             
+             {/* Pagination (Visual only) */}
+             <div className="mt-12 flex justify-center gap-2">
+               <Button variant="outline" size="sm" disabled>Previous</Button>
+               <Button variant="default" size="sm" className="bg-primary">1</Button>
+               <Button variant="outline" size="sm">2</Button>
+               <Button variant="outline" size="sm">Next</Button>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
