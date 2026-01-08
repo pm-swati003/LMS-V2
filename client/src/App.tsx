@@ -24,6 +24,7 @@ import ProgramsPage from "@/pages/public/ProgramsPage";
 import CourseDetailsPage from "@/pages/public/CourseDetailsPage";
 import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
 import CookiePolicyPage from "@/pages/public/CookiePolicyPage";
+import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import PublicLayout from "@/components/layout/PublicLayout";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
@@ -104,6 +105,12 @@ function Router() {
       <Route path="/legal/cookie-policy">
         <PublicLayout>
           <CookiePolicyPage />
+        </PublicLayout>
+      </Route>
+
+      <Route path="/legal/privacy-policy">
+        <PublicLayout>
+          <PrivacyPolicyPage />
         </PublicLayout>
       </Route>
 
