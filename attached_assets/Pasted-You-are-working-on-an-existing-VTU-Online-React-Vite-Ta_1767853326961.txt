@@ -1,0 +1,104 @@
+You are working on an existing VTU Online React + Vite + Tailwind CSS project.
+
+OBJECTIVE:
+Add a new “Cookie Policy” page and connect it to the existing footer link labeled “Cookie Policy”.
+
+STRICT RULES:
+1. DO NOT modify any existing files unless absolutely required for routing.
+2. DO NOT change Navbar, Footer UI structure, colors, spacing, or existing links.
+3. DO NOT remove or rename any existing routes.
+4. Keep styling consistent with the existing design system.
+5. Use Tailwind CSS only (no inline styles, no new CSS files).
+6. The page must be fully responsive.
+
+------------------------------------
+ROUTING REQUIREMENTS
+------------------------------------
+• Create a new route:
+  /cookie-policy
+
+• Ensure the existing footer link “Cookie Policy” navigates to:
+  /cookie-policy
+
+• If routing is centralized (Router.jsx / routes config), only ADD the route — do not refactor.
+
+------------------------------------
+PAGE STRUCTURE (MATCH EXACTLY)
+------------------------------------
+
+1️⃣ HERO SECTION
+• Full-width hero banner
+• Dark blue / navy gradient background
+• Center-aligned content
+• Large title: "Cookie Policy"
+• Breadcrumb text below title:
+  Home > Cookie Policy
+
+• Height similar to other policy pages (FAQ / Support)
+
+------------------------------------
+
+2️⃣ CONTENT SECTION (CENTERED, READABLE WIDTH)
+
+Include the following sections with proper spacing and typography:
+
+SECTION 1:
+Title: "1. What Are Cookies?"
+Paragraph:
+Cookies are small text files that are stored on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the owners of the site.
+
+SECTION 2:
+Title: "2. How We Use Cookies"
+Intro text:
+VTU Online uses cookies to improve your browsing experience by:
+• Keeping you signed in to your account.
+• Understanding how you use our website.
+• Remembering your preferences and settings.
+• Measuring the effectiveness of our marketing campaigns.
+
+SECTION 3:
+Title: "3. Types of Cookies We Use"
+
+Subheading: Essential Cookies  
+Text:
+These are necessary for the website to function properly. They include cookies that enable you to log into secure areas of our website.
+
+Subheading: Analytical / Performance Cookies  
+Text:
+They allow us to recognize and count the number of visitors and to see how visitors move around our website when they are using it.
+
+Subheading: Functionality Cookies  
+Text:
+These are used to recognize you when you return to our website. This enables us to personalize our content for you and remember your preferences.
+
+SECTION 4:
+Title: "4. Managing Your Cookie Preferences"
+Text:
+Most web browsers allow some control of most cookies through the browser settings. To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit:
+https://www.aboutcookies.org
+
+SECTION 5:
+Title: "5. Updates to This Policy"
+Text:
+We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the “Last Updated” date at the bottom of this policy.
+
+------------------------------------
+DESIGN DETAILS
+------------------------------------
+• Headings: Bold, larger font
+• Paragraphs: Comfortable line-height
+• Proper vertical spacing between sections
+• Content width limited for readability
+• No card UI — plain policy layout
+• Must visually match FAQ / Support pages
+
+------------------------------------
+FINAL CHECK
+------------------------------------
+✔ Footer “Cookie Policy” link navigates correctly  
+✔ URL loads /cookie-policy directly  
+✔ Mobile & desktop responsive  
+✔ No visual regressions  
+✔ No console errors  
+
+Proceed step-by-step and implement clean, readable code.

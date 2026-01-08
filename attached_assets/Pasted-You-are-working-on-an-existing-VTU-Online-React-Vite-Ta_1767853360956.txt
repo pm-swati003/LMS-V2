@@ -1,0 +1,57 @@
+You are working on an existing VTU Online React + Vite + Tailwind CSS project.
+
+OBJECTIVE:
+Add a new “Cookie Policy” page and connect it to the existing footer link labeled “Cookie Policy”.
+
+STRICT RULES:
+1. DO NOT modify any existing files unless absolutely required for routing.
+2. DO NOT change Navbar, Footer UI structure, colors, spacing, or existing links.
+3. DO NOT remove or rename any existing routes.
+4. Keep styling consistent with the existing design system.
+5. Use Tailwind CSS only (no inline styles, no new CSS files).
+6. The page must be fully responsive.
+
+------------------------------------
+ROUTING REQUIREMENTS
+------------------------------------
+• Create a new route:
+  /cookie-policy
+
+• Ensure the existing footer link “Cookie Policy” navigates to:
+  /cookie-policy
+
+• If routing is centralized (Router.jsx / routes config), only ADD the route — do not refactor.
+
+------------------------------------
+PAGE STRUCTURE (MATCH EXACTLY)
+------------------------------------
+
+1️⃣ HERO SECTION
+• Full-width hero banner
+• Dark blue / navy gradient background
+• Center-aligned content
+• Large title: "Cookie Policy"
+• Breadcrumb text below title:
+  Home > Cookie Policy
+
+• Height similar to other policy pages (FAQ / Support)
+
+------------------------------------
+
+2️⃣ CONTENT SECTION (CENTERED, READABLE WIDTH)
+
+Include the following sections with proper spacing and typography:
+
+SECTION 1:
+Title: "1. What Are Cookies?"
+Paragraph:
+Cookies are small text files that are stored on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the owners of the site.
+
+SECTION 2:
+Title: "2. How We Use Cookies"
+Intro text:
+VTU Online uses cookies to improve your browsing experience by:
+• Keeping you signed in to your account.
+• Understanding how you use our website.
+• Remembering your preferences and settings.
+• Measuring the effectiveness of our marketing campaigns.
