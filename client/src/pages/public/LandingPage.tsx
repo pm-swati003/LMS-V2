@@ -225,58 +225,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/20">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold">Why Choose VTU online?</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                We combine academic excellence with cutting-edge technology to deliver a learning experience that fits your life.
-              </p>
-              
-              <div className="space-y-6">
-                {[
-                  { title: "Flexible Learning", desc: "Study at your own pace, anytime, anywhere." },
-                  { title: "Industry-Relevant Curriculum", desc: "Courses designed with input from top tech companies." },
-                  { title: "Career Support", desc: "Dedicated career services to help you land your dream job." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="size-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/10 rounded-3xl -rotate-2"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" 
-                alt="Students collaborating" 
-                className="relative rounded-2xl shadow-xl w-full"
-              />
-              <Card className="absolute -bottom-8 -left-8 max-w-xs shadow-xl hidden md:block">
-                 <CardContent className="p-6 flex items-start gap-4">
-                    <div className="size-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
-                      <Star className="size-6 fill-current" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-2xl">4.9/5</div>
-                      <p className="text-sm text-muted-foreground">Student Satisfaction Rating</p>
-                    </div>
-                 </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white text-center">
          <div className="container mx-auto px-4">
