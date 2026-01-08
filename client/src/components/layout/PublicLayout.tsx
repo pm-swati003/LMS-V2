@@ -47,7 +47,6 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       ]
     },
     { name: "Courses", href: "/courses" },
-    { name: "Admissions", href: "/admissions" },
     { 
       name: "Exams", 
       href: "/exams",
@@ -66,7 +65,19 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
         }
       ]
     },
-    { name: "Academics", href: "/academics" },
+    { 
+      name: "Academics", 
+      href: "/academics",
+      children: [
+        { name: "Apply for Minor Degree", href: "/academics/minor-degree" },
+        { name: "Apply for Skill Enhancement", href: "/academics/skill-enhancement" },
+        { name: "Apply for PG MOOCS Course", href: "/academics/pg-moocs" },
+        { name: "Apply for Honour Degree", href: "/academics/honour-degree" },
+        { name: "Registration for PEC and OEC", href: "/academics/pec-oec" },
+        { name: "MOOC Resources", href: "/academics/mooc-resources" },
+        { name: "Course Exam", href: "/academics/course-exam" },
+      ]
+    },
   ];
 
   const announcements = [
