@@ -1,0 +1,108 @@
+Task: Enhance the Circulars feature across the Landing Page and create a dedicated Circulars page with consistent design.
+
+1️⃣ Update Landing Page – Circulars Section
+
+In the existing Circulars section on the Landing Page:
+
+Add a primary button labeled “View All Circulars”.
+
+Position the button below the two circular cards or aligned to the section footer.
+
+Button styling should match existing primary buttons (color, radius, hover state).
+
+On click:
+
+Navigate to the Circulars page using client-side routing (React Router / Wouter, depending on setup).
+
+Route path: /circulars.
+
+2️⃣ Create a New Circulars Page
+
+Create a new page named Circulars.
+
+Design must follow the same layout and styling as the Privacy Policy page, including:
+
+Hero/Header section with:
+
+Page title: Circulars
+
+Breadcrumb: Home > Circulars
+
+Same background gradient, spacing, typography, and alignment.
+
+Below the header, replace policy text content with two cards layout.
+
+3️⃣ Circulars Page – Content Structure
+Layout
+
+Display two large cards side-by-side (responsive → stack on mobile):
+
+Exam Circulars
+
+Admissions Circulars
+
+Each Card Should:
+
+Have a clear title (Exam Circulars / Admissions Circulars).
+
+Contain a scrollable list of circular items.
+
+Display all circulars, including:
+
+Latest
+
+Older circulars (no pagination for now).
+
+Each circular item should include:
+
+Circular title
+
+Date
+
+“NEW” badge for recent items
+
+Clickable row (optional: future PDF/detail navigation)
+
+4️⃣ UI & UX Guidelines
+
+Use card design identical to Landing Page Circular cards:
+
+Rounded corners
+
+Soft shadow
+
+Clean spacing
+
+Maintain:
+
+Same font family
+
+Same color tokens
+
+Same badge styles
+
+Ensure accessibility:
+
+Proper contrast
+
+Keyboard-friendly scrolling
+
+Make lists vertically scrollable if content exceeds height.
+
+5️⃣ Routing & Navigation
+
+Ensure:
+
+Landing Page “View All Circulars” button routes correctly to /circulars.
+
+Circulars page is accessible via URL and navigation flow.
+
+Keep routing consistent with existing Privacy Policy / Terms pages.
+
+6️⃣ Scope Notes
+
+No backend or API required (static/mock data is fine).
+
+Focus on UI consistency, layout, and navigation.
+
+Follow existing project structure and component patterns.

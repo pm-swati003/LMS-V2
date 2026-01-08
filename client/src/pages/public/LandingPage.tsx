@@ -153,6 +153,12 @@ export default function LandingPage() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="text-center mt-10">
+            <Link href="/circulars">
+              <Button size="lg" className="h-12 px-8">View All Circulars</Button>
+            </Link>
+          </div>
         </div>
       </section>
 

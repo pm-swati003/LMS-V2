@@ -27,6 +27,7 @@ import CookiePolicyPage from "@/pages/public/CookiePolicyPage";
 import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import RefundPolicyPage from "@/pages/public/RefundPolicyPage";
 import TermsAndConditionsPage from "@/pages/public/TermsAndConditionsPage";
+import CircularsPage from "@/pages/public/CircularsPage";
 import PublicLayout from "@/components/layout/PublicLayout";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
@@ -100,6 +101,13 @@ function Router() {
       <Route path="/programs/:programId">
         <PublicLayout>
           <CourseProgramDetailsPage />
+        </PublicLayout>
+      </Route>
+
+      {/* Circulars Page */}
+      <Route path="/circulars">
+        <PublicLayout>
+          <CircularsPage />
         </PublicLayout>
       </Route>
 
