@@ -26,6 +26,7 @@ import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
 import CookiePolicyPage from "@/pages/public/CookiePolicyPage";
 import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import RefundPolicyPage from "@/pages/public/RefundPolicyPage";
+import TermsOfServicePage from "@/pages/public/TermsOfServicePage";
 import PublicLayout from "@/components/layout/PublicLayout";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
@@ -118,6 +119,12 @@ function Router() {
       <Route path="/legal/refund-policy">
         <PublicLayout>
           <RefundPolicyPage />
+        </PublicLayout>
+      </Route>
+
+      <Route path="/legal/terms">
+        <PublicLayout>
+          <TermsOfServicePage />
         </PublicLayout>
       </Route>
 
