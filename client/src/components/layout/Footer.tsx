@@ -87,19 +87,8 @@ export function Footer() {
 
         <Separator className="my-8 bg-border/40" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+        <div className="text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} VTU online. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/legal/privacy-policy">
-              <a className="hover:text-foreground transition-colors">Privacy Policy</a>
-            </Link>
-            <Link href="/legal/terms">
-              <a className="hover:text-foreground transition-colors">Terms of Service</a>
-            </Link>
-            <Link href="/accessibility">
-              <a className="hover:text-foreground transition-colors">Accessibility</a>
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
