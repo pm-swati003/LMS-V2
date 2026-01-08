@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 interface FooterLink {
   label: string;
@@ -58,12 +57,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Empowering the next generation of leaders through accessible, world-class online education.
             </p>
-            <div className="flex gap-4 text-muted-foreground">
-              <Facebook className="size-5 hover:text-primary cursor-pointer transition-colors" />
-              <Twitter className="size-5 hover:text-primary cursor-pointer transition-colors" />
-              <Linkedin className="size-5 hover:text-primary cursor-pointer transition-colors" />
-              <Instagram className="size-5 hover:text-primary cursor-pointer transition-colors" />
-            </div>
           </div>
 
           {/* Link Columns */}
