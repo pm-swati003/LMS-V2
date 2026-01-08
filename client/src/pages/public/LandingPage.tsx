@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Users, Award, Globe, CheckCircle2, Star, Calendar } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, Globe, CheckCircle2, Star, Calendar, ChevronDown } from "lucide-react";
 import generatedImage from '@assets/generated_images/modern_university_campus_with_students.png';
 import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 export default function LandingPage() {
   const examCirculars = [
@@ -150,80 +156,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Programs Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Discover Our Top Programs</h2>
-            <p className="text-muted-foreground text-lg">
-              Choose from a wide range of accredited programs designed to advance your career and personal growth.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Computer Science",
-                level: "Bachelor of Science",
-                desc: "Master the foundations of computing, algorithms, and software engineering.",
-                tags: ["Software Dev", "AI", "Data"],
-                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80"
-              },
-              {
-                title: "Business Administration",
-                level: "MBA",
-                desc: "Develop leadership skills and strategic thinking for the global business landscape.",
-                tags: ["Management", "Finance", "Strategy"],
-                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-              },
-              {
-                title: "Digital Design",
-                level: "Bachelor of Arts",
-                desc: "Explore the intersection of creativity and technology in modern design.",
-                tags: ["UI/UX", "Graphics", "Media"],
-                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80"
-              }
-            ].map((program, i) => (
-              <Card key={i} className="group overflow-hidden border-border/50 hover:shadow-lg transition-all duration-300">
-                <div className="aspect-video relative overflow-hidden">
-                   <img 
-                     src={program.image} 
-                     alt={program.title}
-                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                   />
-                   <div className="absolute top-4 left-4">
-                     <Badge className="bg-white/90 text-black hover:bg-white backdrop-blur-sm">{program.level}</Badge>
-                   </div>
-                </div>
-                <CardHeader>
-                  <CardTitle className="font-heading text-xl">{program.title}</CardTitle>
-                  <CardDescription className="line-clamp-2">{program.desc}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {program.tags.map(tag => (
-                      <span key={tag} className="text-xs bg-muted px-2 py-1 rounded-md text-muted-foreground">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="border-t border-border/50 pt-4">
-                  <Button variant="ghost" className="w-full group-hover:text-primary justify-between p-0 hover:bg-transparent">
-                    View Program Details <ArrowRight className="size-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link href="/programs">
-              <Button variant="outline" size="lg">View All Programs</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Our Online Programmes Section */}
+      <OnlineProgrammesSection />
 
       {/* Benefits of VTU Online Programmes */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/20">
@@ -350,5 +284,145 @@ export default function LandingPage() {
          </div>
       </section>
     </div>
+  );
+}
+
+function OnlineProgrammesSection() {
+  const [activeCategory, setActiveCategory] = useState("Popular Courses");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const categories = [
+    "Popular Courses",
+    "Minor Degree",
+    "Honour Degree",
+    "Certificate Programme",
+    "MOOC Resources",
+    "E-Learning VTU",
+    "Skill Enhancement Courses",
+    "VTU Consortium Courses",
+  ];
+
+  const allPrograms = [
+    { title: "(Credits – 03) Python Programming", category: "Technology", image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&q=80", slug: "python-programming", filter: "Popular Courses" },
+    { title: "(Credits – 03) Web Development Fundamentals", category: "Technology", image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&q=80", slug: "web-development", filter: "Popular Courses" },
+    { title: "(Credits – 03) Digital Photography", category: "Photography", image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&q=80", slug: "digital-photography", filter: "Popular Courses" },
+    { title: "(Credits – 03) Data Science Essentials", category: "Technology", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80", slug: "data-science", filter: "Popular Courses" },
+    { title: "(Credits – 03) Business Analytics", category: "Business", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80", slug: "business-analytics", filter: "Popular Courses" },
+    { title: "(Credits – 03) Machine Learning Basics", category: "Technology", image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&q=80", slug: "machine-learning", filter: "Popular Courses" },
+    { title: "(Credits – 12) Minor in Computer Science", category: "Technology", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80", slug: "minor-cs", filter: "Minor Degree" },
+    { title: "(Credits – 12) Minor in Data Analytics", category: "Technology", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80", slug: "minor-data", filter: "Minor Degree" },
+    { title: "(Credits – 20) Honours in AI & ML", category: "Technology", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=80", slug: "honours-ai", filter: "Honour Degree" },
+    { title: "(Credits – 20) Honours in Cybersecurity", category: "Technology", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=80", slug: "honours-cyber", filter: "Honour Degree" },
+    { title: "(Credits – 06) Certificate in Cloud Computing", category: "Technology", image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80", slug: "cert-cloud", filter: "Certificate Programme" },
+    { title: "(Credits – 03) MOOC: IoT Fundamentals", category: "Technology", image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&q=80", slug: "mooc-iot", filter: "MOOC Resources" },
+  ];
+
+  const filteredPrograms = allPrograms.filter(p => p.filter === activeCategory);
+
+  return (
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Online Programmes</h2>
+          <p className="text-muted-foreground text-lg">
+            Choose from high-quality online programmes from VTU
+          </p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Mobile Category Dropdown */}
+          <div className="lg:hidden">
+            <Collapsible open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <CollapsibleTrigger asChild>
+                <Button variant="outline" className="w-full justify-between">
+                  {activeCategory}
+                  <ChevronDown className={`size-4 transition-transform ${mobileMenuOpen ? "rotate-180" : ""}`} />
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-2">
+                <div className="bg-card border border-border rounded-lg p-2 space-y-1">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => {
+                        setActiveCategory(cat);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2 rounded-md text-sm transition-colors ${
+                        activeCategory === cat
+                          ? "bg-primary text-white"
+                          : "hover:bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
+          </div>
+
+          {/* Desktop Sidebar */}
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-24 bg-card border border-border rounded-xl p-4 space-y-1">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                    activeCategory === cat
+                      ? "bg-primary text-white shadow-md"
+                      : "hover:bg-muted text-muted-foreground"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </aside>
+
+          {/* Program Cards Grid */}
+          <div className="flex-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {filteredPrograms.map((program, i) => (
+                <Link key={i} href={`/courses/${program.slug}`}>
+                  <Card className="group cursor-pointer overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="aspect-video relative overflow-hidden">
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <Badge className="bg-primary/90 text-white hover:bg-primary backdrop-blur-sm text-xs">
+                          {program.category}
+                        </Badge>
+                      </div>
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                        {program.title}
+                      </h3>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+
+            {filteredPrograms.length === 0 && (
+              <div className="text-center py-12 text-muted-foreground">
+                <p>No programmes found in this category.</p>
+              </div>
+            )}
+
+            <div className="text-center mt-10">
+              <Link href="/programs">
+                <Button variant="outline" size="lg">View All Programmes</Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
