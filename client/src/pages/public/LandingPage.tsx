@@ -225,6 +225,115 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Benefits of VTU Online Programmes */}
+      <section className="py-24 bg-slate-50 dark:bg-slate-900/20">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Benefits of VTU Online Programmes</h2>
+            <p className="text-muted-foreground text-lg">
+              Experience world-class education with dedicated support at every step of your learning journey.
+            </p>
+          </div>
+
+          {/* Block 1: Learn From the Experts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-1"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" 
+                alt="University campus" 
+                className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold">Learn From the Experts</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Learn from carefully curated content designed and reviewed by experienced faculty from VTU and leading industry professionals. Every course is structured to deliver academic depth and practical relevance.
+              </p>
+              <div className="flex flex-wrap gap-8 py-4">
+                <div>
+                  <div className="text-3xl font-bold text-primary">1000+</div>
+                  <p className="text-sm text-muted-foreground">Subject Experts</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">4.7/5</div>
+                  <p className="text-sm text-muted-foreground">Average Content Rating</p>
+                </div>
+              </div>
+              <Link href="/courses">
+                <Button size="lg" className="h-12 px-6">View Courses</Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Block 2: Dedicated Programme Coordinators */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="space-y-6 order-2 lg:order-1">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold">Dedicated Programme & Course Coordinators</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Each programme is supported by dedicated academic coordinators who ensure smooth course delivery, timely guidance, and continuous learner support throughout the programme.
+              </p>
+              <div className="flex flex-wrap gap-8 py-4">
+                <div>
+                  <div className="text-3xl font-bold text-primary">20,000+</div>
+                  <p className="text-sm text-muted-foreground">Dedicated Doubt Solving Hours</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">200+</div>
+                  <p className="text-sm text-muted-foreground">Course Coordinators</p>
+                </div>
+              </div>
+              <Link href="/programs">
+                <Button size="lg" variant="outline" className="h-12 px-6">Learn More</Button>
+              </Link>
+            </div>
+            <div className="relative order-1 lg:order-2">
+              <div className="absolute -inset-4 bg-primary/5 rounded-3xl rotate-1"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80" 
+                alt="University building" 
+                className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Block 3: Technical Support Cell */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-1"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" 
+                alt="Technical support team" 
+                className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
+              />
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold">Dedicated Technical Support Cell</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Our dedicated technical support team ensures uninterrupted learning by providing prompt assistance for technical and platform-related queries.
+              </p>
+              <div className="space-y-3 py-4">
+                <div className="flex items-center gap-3">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="size-5 text-primary" />
+                  </div>
+                  <span className="text-muted-foreground">1:1 Dedicated Support</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Calendar className="size-5 text-primary" />
+                  </div>
+                  <span className="text-muted-foreground">Telephonic Support: Mon–Sat, 9:30 AM – 5:30 PM</span>
+                </div>
+              </div>
+              <Link href="/contact">
+                <Button size="lg" className="h-12 px-6 bg-primary/90 hover:bg-primary">Reach Us</Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-primary text-white text-center">
          <div className="container mx-auto px-4">
