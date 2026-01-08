@@ -10,16 +10,28 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
+  interface NavChild {
+    name: string;
+    href: string;
+  }
+
+  interface NavGroup {
+    label: string;
+    items: NavChild[];
+  }
+
   interface NavItem {
     name: string;
     href: string;
-    children?: { name: string; href: string }[];
+    children?: NavChild[];
+    groups?: NavGroup[];
   }
 
   const navLinks: NavItem[] = [
@@ -36,7 +48,24 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     },
     { name: "Courses", href: "/courses" },
     { name: "Admissions", href: "/admissions" },
-    { name: "Exams", href: "/exams" },
+    { 
+      name: "Exams", 
+      href: "/exams",
+      groups: [
+        {
+          label: "Exam Registration",
+          items: [
+            { name: "Honours", href: "/exams/honours" },
+            { name: "MOOC Course", href: "/exams/mooc" },
+            { name: "PG MOOC Course", href: "/exams/pg-mooc" },
+            { name: "Minors", href: "/exams/minors" },
+            { name: "Skill Enhancement Course", href: "/exams/skill-enhancement" },
+            { name: "Skill Enhancement Programs (12 Credit)", href: "/exams/skill-enhancement-12" },
+            { name: "Certificate Course", href: "/exams/certificate" },
+          ]
+        }
+      ]
+    },
     { name: "Academics", href: "/academics" },
   ];
 
@@ -76,9 +105,36 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
                       {link.children.map((child) => (
                         <DropdownMenuItem key={child.name} asChild>
                           <Link href={child.href}>
-                            <a className="w-full cursor-pointer">{child.name}</a>
+                            <a className={`w-full cursor-pointer ${location === child.href ? "text-primary" : ""}`}>{child.name}</a>
                           </Link>
                         </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+
+              if (link.groups) {
+                return (
+                  <DropdownMenu key={link.name}>
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary outline-none data-[state=open]:text-primary">
+                      {link.name}
+                      <ChevronDown className="h-4 w-4" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-64">
+                      {link.groups.map((group) => (
+                        <div key={group.label}>
+                          <DropdownMenuLabel className="text-xs uppercase font-semibold text-muted-foreground tracking-wide">
+                            {group.label}
+                          </DropdownMenuLabel>
+                          {group.items.map((item) => (
+                            <DropdownMenuItem key={item.name} asChild>
+                              <Link href={item.href}>
+                                <a className={`w-full cursor-pointer ${location === item.href ? "text-primary" : ""}`}>{item.name}</a>
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </div>
                       ))}
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -122,12 +178,39 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
                           {link.children.map((child) => (
                             <Link key={child.name} href={child.href}>
                               <a 
-                                className="text-base text-muted-foreground hover:text-primary transition-colors py-1"
+                                className={`text-base hover:text-primary transition-colors py-1 ${location === child.href ? "text-primary" : "text-muted-foreground"}`}
                                 onClick={() => setIsOpen(false)}
                               >
                                 {child.name}
                               </a>
                             </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  if (link.groups) {
+                    return (
+                      <div key={link.name} className="flex flex-col gap-2">
+                        <span className="text-lg font-medium text-foreground">{link.name}</span>
+                        <div className="flex flex-col gap-1 pl-4 border-l border-border">
+                          {link.groups.map((group) => (
+                            <div key={group.label} className="flex flex-col gap-1">
+                              <span className="text-xs uppercase font-semibold text-muted-foreground tracking-wide pt-2 pb-1">
+                                {group.label}
+                              </span>
+                              {group.items.map((item) => (
+                                <Link key={item.name} href={item.href}>
+                                  <a 
+                                    className={`text-base hover:text-primary transition-colors py-1 ${location === item.href ? "text-primary" : "text-muted-foreground"}`}
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    {item.name}
+                                  </a>
+                                </Link>
+                              ))}
+                            </div>
                           ))}
                         </div>
                       </div>
