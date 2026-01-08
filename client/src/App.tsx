@@ -26,7 +26,7 @@ import CourseProgramDetailsPage from "@/pages/public/CourseProgramDetailsPage";
 import CookiePolicyPage from "@/pages/public/CookiePolicyPage";
 import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import RefundPolicyPage from "@/pages/public/RefundPolicyPage";
-import TermsOfServicePage from "@/pages/public/TermsOfServicePage";
+import TermsAndConditionsPage from "@/pages/public/TermsAndConditionsPage";
 import PublicLayout from "@/components/layout/PublicLayout";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
@@ -124,7 +124,7 @@ function Router() {
 
       <Route path="/legal/terms">
         <PublicLayout>
-          <TermsOfServicePage />
+          <TermsAndConditionsPage />
         </PublicLayout>
       </Route>
 

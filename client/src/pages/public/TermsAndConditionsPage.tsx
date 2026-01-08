@@ -1,20 +1,20 @@
 import { Link } from "wouter";
 
-export default function TermsOfServicePage() {
+export default function TermsAndConditionsPage() {
   return (
-    <div data-testid="page-terms-of-service">
+    <div data-testid="page-terms-and-conditions">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" data-testid="heading-terms">
-            Terms of Service
+            Terms & Conditions
           </h1>
           <nav className="text-slate-300 text-sm md:text-base" data-testid="breadcrumb-terms">
             <Link href="/">
               <a className="hover:text-white transition-colors">Home</a>
             </Link>
             <span className="mx-2">›</span>
-            <span className="text-white">Terms of Service</span>
+            <span className="text-white">Terms & Conditions</span>
           </nav>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
               1. Acceptance of Terms
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              By accessing and using VTU Online, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+              By accessing and using VTU Online, you agree to be bound by these Terms & Conditions. If you do not agree to these terms, please do not use our services.
             </p>
           </div>
 
