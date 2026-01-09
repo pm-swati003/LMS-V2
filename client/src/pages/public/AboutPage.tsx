@@ -132,8 +132,7 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">Mission of COE</h2>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold">Mission of COE</h2>
           </div>
 
           <div className="max-w-4xl mx-auto">
