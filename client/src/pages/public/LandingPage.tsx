@@ -398,11 +398,11 @@ function OnlineProgrammesSection() {
 
           {/* Program Cards Grid */}
           <div className="flex-1">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-fr">
               {filteredPrograms.map((program, i) => (
-                <Link key={i} href={`/courses/${program.slug}`}>
-                  <Card className="group cursor-pointer overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="aspect-video relative overflow-hidden">
+                <Link key={i} href={`/courses/${program.slug}`} className="block h-full">
+                  <Card className="group cursor-pointer overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                    <div className="aspect-video relative overflow-hidden shrink-0">
                       <img
                         src={program.image}
                         alt={program.title}
@@ -414,8 +414,8 @@ function OnlineProgrammesSection() {
                         </Badge>
                       </div>
                     </div>
-                    <CardContent className="p-4">
-                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                    <CardContent className="p-4 flex-1 flex flex-col">
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[3rem]">
                         {program.title}
                       </h3>
                     </CardContent>
