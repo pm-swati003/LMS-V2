@@ -56,9 +56,9 @@ export default function CircularsPage() {
       {/* Content Section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {/* Exam Circulars Card */}
-            <Card className="border-border/60 shadow-lg" data-testid="card-exam-circulars">
+            <Card className="border-border/60 shadow-lg h-full" data-testid="card-exam-circulars">
               <CardHeader className="pb-4 border-b border-border/40 bg-muted/30">
                 <CardTitle className="text-xl font-semibold flex items-center gap-2" data-testid="title-exam-circulars">
                   Exam Circulars
@@ -95,7 +95,7 @@ export default function CircularsPage() {
             </Card>
 
             {/* Admissions Circulars Card */}
-            <Card className="border-border/60 shadow-lg" data-testid="card-admissions-circulars">
+            <Card className="border-border/60 shadow-lg h-full" data-testid="card-admissions-circulars">
               <CardHeader className="pb-4 border-b border-border/40 bg-muted/30">
                 <CardTitle className="text-xl font-semibold flex items-center gap-2" data-testid="title-admissions-circulars">
                   Admissions Circulars

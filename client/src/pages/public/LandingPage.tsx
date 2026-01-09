@@ -59,20 +59,20 @@ export default function LandingPage() {
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
               Join a global community of learners and innovators. Experience flexible, high-quality online learning designed for the modern world.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="h-14 px-8 text-lg">Explore Programs</Button>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="lg" className="h-14 px-8 text-lg whitespace-nowrap">Explore Programs</Button>
               <Link href="/auth/login">
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white">
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white whitespace-nowrap">
                   Student Portal
                 </Button>
               </Link>
             </div>
             
-            <div className="pt-8 flex items-center gap-4 text-sm text-slate-400">
+            <div className="pt-8 flex flex-wrap items-center gap-4 text-sm text-slate-400">
                <div className="flex -space-x-2">
-                 {[1,2,3,4].map(i => (
+                 {["A","S","R","K"].map((initial, i) => (
                    <div key={i} className="size-8 rounded-full bg-slate-700 border-2 border-slate-900 flex items-center justify-center text-xs font-bold text-white">
-                     {/* Placeholder avatars */}
+                     {initial}
                    </div>
                  ))}
                </div>
@@ -88,9 +88,9 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">Circulars</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {/* Exam Circulars Panel */}
-            <Card className="border-border/60 shadow-sm">
+            <Card className="border-border/60 shadow-sm h-full">
               <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
                 <CardTitle className="text-lg font-semibold flex items-center gap-2">
                   Exam Circulars
@@ -124,7 +124,7 @@ export default function LandingPage() {
             </Card>
 
             {/* Admissions Circulars Panel */}
-            <Card className="border-border/60 shadow-sm">
+            <Card className="border-border/60 shadow-sm h-full">
               <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
                 <CardTitle className="text-lg font-semibold flex items-center gap-2">
                   Admissions Circulars
@@ -194,13 +194,13 @@ export default function LandingPage() {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Learn from carefully curated content designed and reviewed by experienced faculty from VTU and leading industry professionals. Every course is structured to deliver academic depth and practical relevance.
               </p>
-              <div className="flex flex-wrap gap-8 py-4">
-                <div>
-                  <div className="text-3xl font-bold text-primary">1000+</div>
+              <div className="flex flex-wrap gap-6 sm:gap-8 py-4">
+                <div className="min-w-[100px]">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">1000+</div>
                   <p className="text-sm text-muted-foreground">Subject Experts</p>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary">4.7/5</div>
+                <div className="min-w-[100px]">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">4.7/5</div>
                   <p className="text-sm text-muted-foreground">Average Content Rating</p>
                 </div>
               </div>
@@ -217,13 +217,13 @@ export default function LandingPage() {
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Each programme is supported by dedicated academic coordinators who ensure smooth course delivery, timely guidance, and continuous learner support throughout the programme.
               </p>
-              <div className="flex flex-wrap gap-8 py-4">
-                <div>
-                  <div className="text-3xl font-bold text-primary">20,000+</div>
-                  <p className="text-sm text-muted-foreground">Dedicated Doubt Solving Hours</p>
+              <div className="flex flex-wrap gap-6 sm:gap-8 py-4">
+                <div className="min-w-[100px]">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">20,000+</div>
+                  <p className="text-sm text-muted-foreground">Doubt Solving Hours</p>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary">200+</div>
+                <div className="min-w-[100px]">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">200+</div>
                   <p className="text-sm text-muted-foreground">Course Coordinators</p>
                 </div>
               </div>
@@ -286,9 +286,9 @@ export default function LandingPage() {
              Join thousands of students transforming their careers with VTU online.
            </p>
            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button size="lg" variant="secondary" className="h-14 px-8 text-lg text-primary">Apply Now</Button>
+             <Button size="lg" variant="secondary" className="h-14 px-8 text-lg text-primary whitespace-nowrap">Apply Now</Button>
              <Link href="/contact">
-               <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white">Contact Admissions</Button>
+               <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white whitespace-nowrap">Contact Admissions</Button>
              </Link>
            </div>
          </div>

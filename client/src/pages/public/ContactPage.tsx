@@ -34,12 +34,12 @@ export default function ContactPage() {
       {/* Contact Content */}
       <section className="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/20">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-stretch">
             
             {/* Get in Touch Card */}
-            <Card className="bg-white shadow-sm border-border/50 h-full">
-              <CardContent className="p-8 md:p-10 space-y-8">
-                <h2 className="text-2xl font-heading font-bold mb-6">Get in Touch</h2>
+            <Card className="bg-white shadow-sm border-border/50 h-full flex flex-col">
+              <CardContent className="p-6 sm:p-8 md:p-10 space-y-6 flex-1">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold">Get in Touch</h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -86,9 +86,9 @@ export default function ContactPage() {
             </Card>
 
             {/* Send Message Form */}
-            <Card className="bg-white shadow-sm border-border/50 h-full">
-              <CardContent className="p-8 md:p-10">
-                <h2 className="text-2xl font-heading font-bold mb-6">Send Us a Message</h2>
+            <Card className="bg-white shadow-sm border-border/50 h-full flex flex-col">
+              <CardContent className="p-6 sm:p-8 md:p-10 flex-1">
+                <h2 className="text-xl sm:text-2xl font-heading font-bold mb-6">Send Us a Message</h2>
                 
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

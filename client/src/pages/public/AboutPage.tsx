@@ -34,8 +34,8 @@ export default function AboutPage() {
           <p className="text-muted-foreground text-lg">Public university in Belagavi, Karnataka</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="space-y-5 text-muted-foreground leading-relaxed">
             <p>
               VTU is one of the largest Technological Universities in India with 24 years of Tradition of excellence in Engineering & Technical Education, Research and Innovations. It came into existence in the year 1998 to cater the needs of Indian industries for trained technical manpower with practical experience and sound theoretical knowledge.
             </p>
@@ -104,7 +104,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-heading font-bold">About Centre for Online Education</h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div className="bg-slate-100 rounded-xl aspect-square flex items-center justify-center relative overflow-hidden">
              {/* Placeholder Image */}
              <svg className="w-32 h-32 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
@@ -195,7 +195,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-heading font-bold uppercase tracking-wide">Hon'ble Vice Chancellor Message</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto items-center">
             <div className="md:col-span-1">
               <div className="bg-white rounded-xl aspect-[3/4] flex items-center justify-center border border-border shadow-sm p-4">
                  {/* Placeholder Image */}
@@ -231,7 +231,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-heading font-bold">The Officers of the University</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
           {[
             { name: "Hon'ble Shri Thaawarchand Gehlot", role: "The Governor of Karnataka & Chancellor", sub: "VTU" },
             { name: "Dr. M C Sudhakar", role: "Minister for Higher Education, Government of Karnataka and Pro-Chancellor of", sub: "VTU" },

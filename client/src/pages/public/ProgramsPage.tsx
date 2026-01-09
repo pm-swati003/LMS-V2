@@ -62,9 +62,9 @@ export default function ProgramsPage() {
 
       <div className="container mx-auto px-4 md:px-8 py-8 md:py-12">
         {/* 2. Filters & Sorting Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-sm font-medium text-muted-foreground mr-2">Quick Filters:</span>
+            <span className="text-sm font-medium text-muted-foreground mr-2 shrink-0">Quick Filters:</span>
             {["Reset All", "Undergraduate", "Postgraduate", "Diploma", "Certificate"].map((filter, i) => (
               <Badge 
                 key={filter} 
@@ -185,18 +185,18 @@ export default function ProgramsPage() {
                           </svg>
                         </div>
                      </div>
-                     <CardContent className="p-5 flex flex-col h-[180px]">
+                     <CardContent className="p-5 flex flex-col min-h-[160px]">
                        <div className="mb-2">
                           <Badge variant="secondary" className="text-xs font-normal">
                             {program.level}
                           </Badge>
                        </div>
-                       <h3 className="font-semibold text-lg line-clamp-2 mb-auto group-hover:text-primary transition-colors">
+                       <h3 className="font-semibold text-base sm:text-lg line-clamp-2 flex-1 group-hover:text-primary transition-colors leading-snug">
                          {program.title}
                        </h3>
-                       <div className="pt-4 mt-auto flex items-center justify-between text-sm text-muted-foreground">
+                       <div className="pt-3 mt-auto border-t border-border/30 flex items-center justify-between text-sm text-muted-foreground">
                          <span>{program.duration}</span>
-                         <span>{program.category}</span>
+                         <span className="truncate max-w-[100px]">{program.category}</span>
                        </div>
                      </CardContent>
                    </Card>

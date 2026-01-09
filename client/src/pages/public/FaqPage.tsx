@@ -85,15 +85,15 @@ export default function FaqPage() {
       {/* Program Category Icons Section */}
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 max-w-4xl mx-auto">
             {programCategories.map((category, index) => (
               <div 
                 key={index} 
                 className="flex flex-col items-center gap-4"
                 data-testid={`category-${index}`}
               >
-                <div className="size-20 md:size-24 rounded-full bg-primary/10 flex items-center justify-center">
-                  <category.icon className="size-10 md:size-12 text-primary" />
+                <div className="size-16 sm:size-20 md:size-24 rounded-full bg-primary/10 flex items-center justify-center">
+                  <category.icon className="size-8 sm:size-10 md:size-12 text-primary" />
                 </div>
                 <span className="text-sm md:text-base font-medium text-foreground text-center">
                   {category.label}

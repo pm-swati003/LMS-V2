@@ -104,14 +104,14 @@ export default function SupportPage() {
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2" data-testid="cta-heading">
             Is That Helpful?
           </h3>
-          <p className="text-lg text-muted-foreground mb-8" data-testid="cta-subheading">
-            Are You Still Confusion?
+          <p className="text-base sm:text-lg text-muted-foreground mb-8" data-testid="cta-subheading">
+            Still have questions? We're here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="h-12 px-8" data-testid="button-create-ticket">
+            <Button size="lg" className="h-12 px-6 sm:px-8 whitespace-nowrap" data-testid="button-create-ticket">
               Create New Ticket
             </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8" data-testid="button-view-ticket">
+            <Button size="lg" variant="outline" className="h-12 px-6 sm:px-8 whitespace-nowrap" data-testid="button-view-ticket">
               View Ticket
             </Button>
           </div>

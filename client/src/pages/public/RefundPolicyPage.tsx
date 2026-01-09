@@ -20,8 +20,8 @@ export default function RefundPolicyPage() {
       </section>
 
       {/* Content Section */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
+      <section className="py-12 md:py-16 bg-background">
+        <div className="container mx-auto px-4 md:px-8 max-w-3xl prose-headings:scroll-mt-20">
           {/* Section 1 */}
           <div className="mb-10">
             <h2 className="text-xl md:text-2xl font-bold text-foreground mb-4" data-testid="heading-eligibility">
