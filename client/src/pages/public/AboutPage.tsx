@@ -114,45 +114,74 @@ export default function AboutPage() {
              </svg>
           </div>
 
-          <div className="space-y-8">
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>
-                The expansion of higher education is a significant area of attention for creating a knowledge based economy. The Gross Enrollment Ratio (GER) must be doubled from current levels to have a major influence on the same. This need has been extensively researched and raised by numerous policy planners, commissions, and considerate educators. The National Knowledge Commission (NKC) has released a number of educational research institute and reform-related policies that are necessary for India to compete in the knowledge economy and knowledge intensive service industries. The Role of Online Learning System (OL) becomes significant and unique.
-              </p>
-              <p>
-                The Online Learning System (OL) assumes a crucial role in achieving the objectives under this framework. OL has established itself as a powerful tool for educational empowerment of many learners who are denied access to conventional 'face-to-face' education for a variety of reasons. By utilizing cutting-edge technology, OL has the ability to provide education to everyone and everywhere. People who live in areas where it is challenging for teachers to reach them would benefit from this.
-              </p>
-              <p>
-                The VTU-COE established in the year of 2022 with the goal of providing multiple of programmes in management, computer applications. Currently VTU-COE offers 3 UG programmes, 5 PG programmes in Computer Applications, and 5 PG Programmes in Management and also PG Diploma programmes in management and computer science field.
-              </p>
-            </div>
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              The expansion of higher education is a significant area of attention for creating a knowledge based economy. The Gross Enrollment Ratio (GER) must be doubled from current levels to have a major influence on the same. This need has been extensively researched and raised by numerous policy planners, commissions, and considerate educators. The National Knowledge Commission (NKC) has released a number of educational research institute and reform-related policies that are necessary for India to compete in the knowledge economy and knowledge intensive service industries. The Role of Online Learning System (OL) becomes significant and unique.
+            </p>
+            <p>
+              The Online Learning System (OL) assumes a crucial role in achieving the objectives under this framework. OL has established itself as a powerful tool for educational empowerment of many learners who are denied access to conventional 'face-to-face' education for a variety of reasons. By utilizing cutting-edge technology, OL has the ability to provide education to everyone and everywhere. People who live in areas where it is challenging for teachers to reach them would benefit from this.
+            </p>
+            <p>
+              The VTU-COE established in the year of 2022 with the goal of providing multiple of programmes in management, computer applications. Currently VTU-COE offers 3 UG programmes, 5 PG programmes in Computer Applications, and 5 PG Programmes in Management and also PG Diploma programmes in management and computer science field.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <div>
-              <h3 className="font-heading font-bold text-xl mb-4 uppercase tracking-wide">Mission of COE</h3>
-              <ul className="space-y-4 text-sm text-muted-foreground">
-                <li className="flex gap-3">
-                  <span className="font-bold text-slate-900 shrink-0">1.</span>
-                  <span>
-                    <strong className="text-slate-900">To Enhance Access and Equity in Higher Education:</strong> The CoE focuses on providing online education that is accessible to learners from different geographical locations, socioeconomic backgrounds, and abilities. This can help increase the GER in higher education and promote equity in educational opportunities.
-                  </span>
+      {/* 5. Mission of COE Section */}
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/20">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3">Mission of COE</h2>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-border/40 p-8 md:p-10">
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="font-bold text-primary">1</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">To Enhance Access and Equity in Higher Education</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The CoE focuses on providing online education that is accessible to learners from different geographical locations, socioeconomic backgrounds, and abilities. This can help increase the GER in higher education and promote equity in educational opportunities.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex gap-3">
-                  <span className="font-bold text-slate-900 shrink-0">2.</span>
-                  <span>
-                    <strong className="text-slate-900">To Foster Innovation in Online Learning:</strong> The CoE encourages innovation in online pedagogies, technologies, and assessment practices. This can enable the development of high-quality online courses that are engaging, interactive, and relevant to the needs of learners.
-                  </span>
+                <li className="flex gap-4">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="font-bold text-primary">2</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">To Foster Innovation in Online Learning</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The CoE encourages innovation in online pedagogies, technologies, and assessment practices. This can enable the development of high-quality online courses that are engaging, interactive, and relevant to the needs of learners.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex gap-3">
-                  <span className="font-bold text-slate-900 shrink-0">3.</span>
-                  <span>
-                    <strong className="text-slate-900">To Offer Flexible and Personalized Learning Experiences:</strong> The CoE focuses on designing online courses that provide flexibility and personalization to learners. This can allow learners to pace their learning, choose courses that align with their interests and career goals, and receive feedback and support from instructors.
-                  </span>
+                <li className="flex gap-4">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="font-bold text-primary">3</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">To Offer Flexible and Personalized Learning Experiences</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The CoE focuses on designing online courses that provide flexibility and personalization to learners. This can allow learners to pace their learning, choose courses that align with their interests and career goals, and receive feedback and support from instructors.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex gap-3">
-                  <span className="font-bold text-slate-900 shrink-0">4.</span>
-                  <span>
-                    <strong className="text-slate-900">To Promote Employability and Entrepreneurship:</strong> The CoE promotes collaboration with industry partners to develop online courses that promote employability and entrepreneurship. This can help learners acquire relevant skills and knowledge that are in demand in the job market and foster a culture of innovation and entrepreneurship.
-                  </span>
+                <li className="flex gap-4">
+                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="font-bold text-primary">4</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">To Promote Employability and Entrepreneurship</h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The CoE promotes collaboration with industry partners to develop online courses that promote employability and entrepreneurship. This can help learners acquire relevant skills and knowledge that are in demand in the job market and foster a culture of innovation and entrepreneurship.
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -160,8 +189,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. Hon’ble Vice Chancellor Message */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/20">
+      {/* 6. Hon'ble Vice Chancellor Message */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold uppercase tracking-wide">Hon'ble Vice Chancellor Message</h2>
@@ -197,7 +226,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. Officers of the University */}
+      {/* 7. Officers of the University */}
       <section className="py-16 md:py-24 container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-heading font-bold">The Officers of the University</h2>
