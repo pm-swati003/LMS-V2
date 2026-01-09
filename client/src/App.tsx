@@ -28,6 +28,7 @@ import PrivacyPolicyPage from "@/pages/public/PrivacyPolicyPage";
 import RefundPolicyPage from "@/pages/public/RefundPolicyPage";
 import TermsAndConditionsPage from "@/pages/public/TermsAndConditionsPage";
 import CircularsPage from "@/pages/public/CircularsPage";
+import FaqPage from "@/pages/public/FaqPage";
 import PublicLayout from "@/components/layout/PublicLayout";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
@@ -108,6 +109,13 @@ function Router() {
       <Route path="/circulars">
         <PublicLayout>
           <CircularsPage />
+        </PublicLayout>
+      </Route>
+
+      {/* FAQ Page */}
+      <Route path="/faq">
+        <PublicLayout>
+          <FaqPage />
         </PublicLayout>
       </Route>
 
