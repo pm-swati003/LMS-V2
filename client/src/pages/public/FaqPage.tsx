@@ -112,13 +112,20 @@ export default function FaqPage() {
               <AccordionItem 
                 key={faq.id} 
                 value={faq.id}
-                className="bg-card border border-border/60 rounded-xl px-6 shadow-sm data-[state=open]:shadow-md transition-shadow"
+                className="border-0 rounded-xl overflow-hidden shadow-sm"
                 data-testid={`faq-item-${faq.id}`}
               >
-                <AccordionTrigger className="text-left text-base md:text-lg font-medium py-5 hover:no-underline">
+                <AccordionTrigger 
+                  className="text-left text-base md:text-lg font-medium px-6 py-5 hover:no-underline w-full
+                    bg-card border border-border/60 rounded-xl
+                    data-[state=open]:bg-primary data-[state=open]:text-primary-foreground 
+                    data-[state=open]:border-primary data-[state=open]:rounded-b-none
+                    transition-all duration-200 ease-in-out
+                    [&[data-state=open]>svg]:text-primary-foreground"
+                >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="text-muted-foreground leading-relaxed px-6 pb-5 pt-4 border-x border-b border-border/60 rounded-b-xl bg-transparent">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
