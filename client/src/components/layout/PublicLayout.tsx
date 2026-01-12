@@ -193,7 +193,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full sm:w-80 p-0 flex flex-col">
+            <SheetContent side="right" className="w-full sm:w-80 p-0 flex flex-col [&>button]:hidden">
               {/* Fixed Header with Close Button */}
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <span className="font-heading font-bold text-lg text-primary">Menu</span>
