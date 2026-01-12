@@ -1,4 +1,5 @@
-import { useLocation, Link } from "wouter";
+import { useLocation, Link, useRoute } from "wouter";
+import { useToast } from "@/hooks/use-toast";
 import {
   Sidebar,
   SidebarContent,
@@ -37,7 +38,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export default function StudentLayout({ children }: { children: React.ReactNode }) {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
+  const { toast } = useToast();
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
+    sessionStorage.clear();
+    
+    toast({
+      title: "Logged out successfully",
+      description: "You have been signed out of your account.",
+    });
+    
+    setLocation("/");
+  };
 
   const navigation = [
     { name: "Dashboard", href: "/student/dashboard", icon: LayoutDashboard },
@@ -133,7 +148,11 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Billing</DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="text-destructive">
+                  <DropdownMenuItem 
+                    className="text-destructive cursor-pointer"
+                    onClick={handleLogout}
+                    data-testid="logout-button"
+                  >
                     <LogOut className="mr-2 h-4 w-4" />
                     Log out
                   </DropdownMenuItem>
