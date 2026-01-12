@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import GlobalFloatingActions from "@/components/floating/GlobalFloatingActions";
 import NotFound from "@/pages/not-found";
 import Login from "@/pages/auth/Login";
 import Signup from "@/pages/auth/Signup";
@@ -191,6 +192,7 @@ function App() {
       <TooltipProvider>
         <Router />
         <Toaster />
+        <GlobalFloatingActions />
       </TooltipProvider>
     </QueryClientProvider>
   );

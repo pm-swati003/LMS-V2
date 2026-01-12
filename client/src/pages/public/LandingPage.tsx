@@ -11,12 +11,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import CookieConsent from "@/components/floating/CookieConsent";
-import FloatingButtons from "@/components/floating/FloatingButtons";
-import ChatWidget from "@/components/floating/ChatWidget";
 
 export default function LandingPage() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
   const examCirculars = [
     { title: "Final Semester Exam Schedule Declared", date: "Oct 24, 2025", isNew: true },
     { title: "Hall Ticket Download Instructions", date: "Oct 20, 2025", isNew: true },
@@ -294,10 +290,6 @@ export default function LandingPage() {
          </div>
       </section>
 
-      {/* Floating Components */}
-      <CookieConsent />
-      <FloatingButtons onChatClick={() => setIsChatOpen(!isChatOpen)} isChatOpen={isChatOpen} />
-      <ChatWidget isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
   );
 }
