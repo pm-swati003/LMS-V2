@@ -15,29 +15,33 @@ import {
   SidebarTrigger,
   SidebarInset,
 } from "@/components/ui/sidebar";
-import { 
-  LayoutDashboard, 
-  BookOpen, 
-  Library, 
-  GraduationCap, 
-  Settings, 
+import {
+  LayoutDashboard,
+  BookOpen,
+  Library,
+  GraduationCap,
+  Settings,
   LogOut,
   Bell,
-  Search
+  Search,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuLabel, 
-  DropdownMenuSeparator, 
-  DropdownMenuTrigger 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function StudentLayout({ children }: { children: React.ReactNode }) {
+export default function StudentLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [location, setLocation] = useLocation();
   const { toast } = useToast();
 
@@ -45,12 +49,12 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
     sessionStorage.clear();
-    
+
     toast({
       title: "Logged out successfully",
       description: "You have been signed out of your account.",
     });
-    
+
     setLocation("/");
   };
 
@@ -58,7 +62,11 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
     { name: "Dashboard", href: "/student/dashboard", icon: LayoutDashboard },
     { name: "Browse Courses", href: "/student/courses", icon: BookOpen },
     { name: "My Courses", href: "/student/my-courses", icon: Library },
-    { name: "Certificates", href: "/student/certificates", icon: GraduationCap },
+    {
+      name: "Certificates",
+      href: "/student/certificates",
+      icon: GraduationCap,
+    },
   ];
 
   return (
@@ -70,7 +78,9 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
               <div className="size-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
                 <span className="text-white">V</span>
               </div>
-              <span className="truncate group-data-[collapsible=icon]:hidden">VTU online</span>
+              <span className="truncate group-data-[collapsible=icon]:hidden">
+                VTU online
+              </span>
             </div>
           </SidebarHeader>
           <SidebarContent className="px-2 py-4">
@@ -80,8 +90,8 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
                 <SidebarMenu>
                   {navigation.map((item) => (
                     <SidebarMenuItem key={item.name}>
-                      <SidebarMenuButton 
-                        asChild 
+                      <SidebarMenuButton
+                        asChild
                         isActive={location === item.href}
                         tooltip={item.name}
                         className="font-medium"
@@ -96,7 +106,7 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
-            
+
             <SidebarGroup className="mt-auto">
               <SidebarGroupContent>
                 <SidebarMenu>
@@ -104,7 +114,7 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
                     <SidebarMenuButton asChild tooltip="Settings">
                       <Link href="/student/settings">
                         <Settings className="size-5" />
-                        <span>Settings</span>
+                        <span>Profile Settings</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -135,9 +145,15 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-9 w-9 rounded-full">
+                  <Button
+                    variant="ghost"
+                    className="relative h-9 w-9 rounded-full"
+                  >
                     <Avatar className="h-9 w-9 border border-border">
-                      <AvatarImage src="https://github.com/shadcn.png" alt="@student" />
+                      <AvatarImage
+                        src="https://github.com/shadcn.png"
+                        alt="@student"
+                      />
                       <AvatarFallback>ST</AvatarFallback>
                     </Avatar>
                   </Button>
@@ -148,7 +164,7 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Billing</DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem 
+                  <DropdownMenuItem
                     className="text-destructive cursor-pointer"
                     onClick={handleLogout}
                     data-testid="logout-button"
