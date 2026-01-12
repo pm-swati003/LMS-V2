@@ -1,0 +1,125 @@
+Update only the Settings / Profile page UI using all provided reference screenshots, including the hero section image.
+
+⚠️ Strict constraints (do not violate):
+
+Do NOT change existing brand colors, gradients, fonts, or typography scale
+
+Maintain full visual consistency with other already-designed pages
+
+Do NOT redesign header, navbar, footer, or other pages
+
+Modify only the Settings/Profile page UI
+
+Tech Stack (unchanged)
+
+React.js (Vite)
+
+Tailwind CSS
+
+shadcn/ui components only
+
+Hero Section (Top Banner)
+
+Retain the existing hero background image and overlay
+
+Main heading text:
+
+Hey, SWATI PADANAD
+
+Sub-navigation (breadcrumb) format:
+
+Dashboard / Profile
+
+Breadcrumb behavior (important):
+
+Dashboard → navigates to Student Dashboard page
+
+Profile → current page (non-clickable or active state)
+
+Remove Home from breadcrumb completely
+
+Styling rules:
+
+Match font size, weight, spacing, and alignment from reference
+
+Keep hero height and vertical centering consistent
+
+No animation changes
+
+Settings Page Layout (Below Hero)
+
+Two-column layout inside a centered container
+
+Left Sidebar
+
+Fixed width
+
+Display logged-in user name at top
+
+Single menu item: Profile
+
+Active state uses existing primary color
+
+Rounded corners and spacing must match reference
+
+Right Content Area
+
+Card-style container
+
+Same background, shadow, and border radius used elsewhere in the app
+
+Page heading: Profile
+
+Profile Image Section
+
+Circular avatar placeholder
+
+Small edit icon overlay (bottom-right of avatar)
+
+Keep text exactly:
+
+“Select Your Picture”
+
+“Accepted Image Files: JPEG, JPG, PNG”
+
+“Accepted Size: 300 × 300 (1MB)”
+
+Form Layout & Fields
+
+Use a clean two-column grid where applicable
+
+Align fields exactly as shown in reference screenshots
+
+Field order (must not change):
+
+First Name | Last Name
+
+Email (full width)
+
+Phone Number (full width)
+
+College Name (dropdown) | Branch (dropdown)
+
+Batch (dropdown) | USN
+
+Bio (textarea, full width)
+
+Gender (radio buttons: Male, Female, Others)
+
+Primary CTA: Save Profile Now
+
+UI & UX Rules
+
+Reuse existing Tailwind utility classes
+
+No new colors, gradients, or shadows
+
+Inputs must match existing border radius, focus state, and typography
+
+Dropdowns must open directly below inputs
+
+Sidebar remains static; content scrolls
+
+No new animations or transitions
+
+Academic, clean, production-ready UI (non-flashy)
