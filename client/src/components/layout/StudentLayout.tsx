@@ -45,6 +45,8 @@ export default function StudentLayout({
   const [location, setLocation] = useLocation();
   const { toast } = useToast();
 
+  const isSettingsPage = location === "/student/settings";
+
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
@@ -72,6 +74,7 @@ export default function StudentLayout({
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full bg-background">
+        {!isSettingsPage && (
         <Sidebar collapsible="icon" className="border-r border-border/40">
           <SidebarHeader className="h-16 flex items-center justify-center border-b border-border/40 px-6">
             <div className="flex items-center gap-2 font-heading font-bold text-xl text-primary w-full overflow-hidden">
@@ -124,10 +127,11 @@ export default function StudentLayout({
           </SidebarContent>
           <SidebarRail />
         </Sidebar>
+        )}
 
         <SidebarInset>
           <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b border-border/40 bg-background/80 px-6 backdrop-blur-md">
-            <SidebarTrigger />
+            {!isSettingsPage && <SidebarTrigger />}
             <div className="flex-1">
               <div className="relative max-w-md hidden md:block">
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
