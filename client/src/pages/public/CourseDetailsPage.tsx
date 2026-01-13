@@ -90,7 +90,7 @@ export default function CourseDetailsPage() {
               </div>
             </div>
 
-            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 h-12 text-base font-medium">
+            <Button className="bg-white text-slate-900 hover:bg-slate-100 px-8 h-12 text-base font-medium">
               Download Brochure
             </Button>
           </div>
