@@ -1,5 +1,9 @@
 import { Link } from "wouter";
 import { Separator } from "@/components/ui/separator";
+import Logo from "@/components/brand/Logo";
+
+
+
 
 interface FooterLink {
   label: string;
@@ -48,10 +52,14 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/">
               <a className="flex items-center gap-2 font-heading font-bold text-xl text-primary">
-                <div className="size-8 rounded-lg bg-primary flex items-center justify-center text-white shrink-0">
-                  V
-                </div>
-                <span>VTU online</span>
+                <Logo size={82} className=" mb-6" />
+                
+                <div className="flex flex-col leading-tight">
+                  <span>VTU online</span>
+    <span className="text-sm md:text-base font-semibold text-foreground">
+      Center for Online Education
+    </span>
+  </div>
               </a>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
