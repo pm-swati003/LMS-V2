@@ -60,6 +60,10 @@ export function StudentNav() {
 
     setLocation("/");
   };
+  const handleProfile = () => {
+
+    setLocation("/student/settings");
+  };
 
   const navLinks: NavItem[] = [
     { name: "Home", href: "/" },
@@ -150,9 +154,9 @@ export function StudentNav() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuSeparator />
+              <DropdownMenuItem
+               className="cursor-pointer"
+                onClick={handleProfile}>Profile</DropdownMenuItem>
               <DropdownMenuItem
                 className="text-destructive cursor-pointer"
                 onClick={handleLogout}
