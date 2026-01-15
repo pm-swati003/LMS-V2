@@ -3,6 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { CirclePower } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +26,13 @@ import {
   Settings,
 } from "lucide-react";
 import { StudentNav } from "@/components/layout/StudentNav";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+
 
 export default function StudentLayout({
   children,
@@ -33,6 +41,14 @@ export default function StudentLayout({
 }) {
   const [location] = useLocation();
   const { toast } = useToast();
+  const [, setLocation] = useLocation();
+
+const handleLogout = () => {
+  localStorage.clear();
+  sessionStorage.clear();
+  setLocation("/");
+};
+
 
   const isSettingsPage = location === "/student/settings";
 
@@ -93,6 +109,10 @@ export default function StudentLayout({
                     <SidebarGroupContent>
                       <SidebarMenu>
                         <SidebarMenuItem>
+                          <SidebarMenuButton tooltip="Logout" onClick={handleLogout}>
+              <CirclePower className="size-5 text-destructive cursor-pointer"/>
+              <span className="cursor-pointer text-destructive">Logout</span>
+            </SidebarMenuButton>
                           <SidebarMenuButton asChild tooltip="Settings">
                             <Link href="/student/settings">
                               <Settings className="size-5" />
