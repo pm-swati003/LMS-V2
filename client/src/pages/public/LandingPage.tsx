@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { ArrowRight, BookOpen, Users, Award, Globe, CheckCircle2, Star, Calendar, ChevronDown } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, Globe, CheckCircle2, Star, Calendar, ChevronDown, Info } from "lucide-react";
 import generatedImage from '@assets/generated_images/modern_university_campus_with_students.png';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -30,6 +30,9 @@ export default function LandingPage() {
     { title: "International Student Admission Guidelines", date: "Sep 30, 2025", isNew: false },
     { title: "Ph.D. Entrance Test Notification", date: "Sep 25, 2025", isNew: false },
   ];
+const hasExam = examCirculars.length > 0;
+const hasAdmissions = admissionCirculars.length > 0;
+const allCirculars = [...examCirculars, ...admissionCirculars];
 
   return (
     <div className="animate-in fade-in duration-500">
@@ -37,7 +40,7 @@ export default function LandingPage() {
       <section className="relative overflow-hidden bg-slate-900 text-white min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
            <img 
-             src={generatedImage} 
+             src="vtu banner.jpg"
              alt="University Campus" 
              className="w-full h-full object-cover opacity-30"
            />
@@ -56,7 +59,9 @@ export default function LandingPage() {
               Join a global community of learners and innovators. Experience flexible, high-quality online learning designed for the modern world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/programs">
               <Button size="lg" className="h-14 px-8 text-lg whitespace-nowrap">Explore Programs</Button>
+              </Link>
               <Link href="/auth/login">
                 <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white whitespace-nowrap">
                   Student Portal
@@ -80,93 +85,77 @@ export default function LandingPage() {
 
 
       {/* Circulars Section */}
-      <section className="py-16 bg-background border-b border-border/40">
+     <section className="py-16 bg-background border-b border-border/40">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-8">Circulars</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-            {/* Exam Circulars Panel */}
-            <Card className="border-border/60 shadow-sm h-full">
-              <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
-                <CardTitle className="text-lg font-semibold flex items-center gap-2">
-                  Exam Circulars
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <ScrollArea className="h-[300px] w-full p-4">
-                  <div className="space-y-1">
-                    {examCirculars.map((item, i) => (
-                      <div 
-                        key={i} 
-                        className="group flex flex-col gap-1 p-3 rounded-md hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
-                      >
-                        <div className="flex items-start justify-between gap-2">
-                          <span className="font-medium text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                            {item.title}
-                          </span>
-                          {item.isNew && (
-                            <Badge variant="destructive" className="text-[10px] px-1.5 py-0 h-5 shrink-0">NEW</Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <Calendar className="size-3" />
-                          <span>{item.date}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
+          <h2 className=" flex justify-center text-2xl md:text-3xl font-heading font-bold mb-8">
+            Circulars
+          </h2>
 
-            {/* Admissions Circulars Panel */}
-            <Card className="border-border/60 shadow-sm h-full">
-              <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
-                <CardTitle className="text-lg font-semibold flex items-center gap-2">
-                  Admissions Circulars
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <ScrollArea className="h-[300px] w-full p-4">
-                  <div className="space-y-1">
-                    {admissionCirculars.map((item, i) => (
-                      <div 
-                        key={i} 
-                        className="group flex flex-col gap-1 p-3 rounded-md hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
-                      >
-                        <div className="flex items-start justify-between gap-2">
-                          <span className="font-medium text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                            {item.title}
-                          </span>
-                          {item.isNew && (
-                            <Badge variant="destructive" className="text-[10px] px-1.5 py-0 h-5 shrink-0">NEW</Badge>
-                          )}
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl">
+              <Card className="border-border/60 shadow-sm">
+                <CardHeader className="pb-3 border-b border-border/40 bg-muted/30">
+                  <CardTitle className="text-lg font-semibold">
+                    All Circulars
+                  </CardTitle>
+                </CardHeader>
+
+                <CardContent className="p-0">
+                  <ScrollArea className="h-[360px] w-full p-4">
+                    <div className="space-y-1">
+                      {allCirculars.map((item, i) => (
+                        <div
+                          key={i}
+                          className="group flex flex-col gap-1 p-3 rounded-md hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
+                        >
+                          <div className="flex items-start justify-between gap-2">
+                            <span className="font-medium text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                              {item.title}
+                            </span>
+
+                            {item.isNew && (
+                              <Badge className="bg-primary text-primary-foreground text-[10px] px-1.5 py-0 h-5">
+                  NEW
+                </Badge>
+
+                            )}
+                          </div>
+
+                          <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                            <Calendar className="size-3" />
+                            <span>{item.date}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <Calendar className="size-3" />
-                          <span>{item.date}</span>
+                      ))}
+
+                      {allCirculars.length === 0 && (
+                        <div className="text-center py-12 text-muted-foreground text-sm">
+                          No circulars available at the moment.
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
+                      )}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           <div className="text-center mt-10">
             <Link href="/circulars">
-              <Button size="lg" className="h-12 px-8">View All Circulars</Button>
+              <Button size="lg" className="h-12 px-8">
+                View All Circulars
+              </Button>
             </Link>
           </div>
         </div>
       </section>
-
-      {/* Our Online Programmes Section */}
+{/* Our Online Programmes Section */}
       <OnlineProgrammesSection />
 
       {/* Benefits of VTU Online Programmes */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/20">
+      <section className="py-24 bg-background shadow-[0_-4px_16px_hsl(var(--primary)_/_0.10),0_4px_16px_hsl(var(--primary)_/_0.08)]">
+
+
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Benefits of VTU Online Programmes</h2>
@@ -180,7 +169,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-1"></div>
               <img 
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" 
+                src="learn frm exp.jpg" 
                 alt="University campus" 
                 className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
               />
@@ -230,7 +219,7 @@ export default function LandingPage() {
             <div className="relative order-1 lg:order-2">
               <div className="absolute -inset-4 bg-primary/5 rounded-3xl rotate-1"></div>
               <img 
-                src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80" 
+                src="prgm coor.jpg" 
                 alt="University building" 
                 className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
               />
@@ -242,7 +231,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-1"></div>
               <img 
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" 
+                src="tech coor.jpg" 
                 alt="Technical support team" 
                 className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
               />
@@ -327,7 +316,8 @@ function OnlineProgrammesSection() {
   const filteredPrograms = allPrograms.filter(p => p.filter === activeCategory);
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background shadow-[0_-4px_16px_hsl(var(--primary)_/_0.10),0_4px_16px_hsl(var(--primary)_/_0.08)]">
+
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Online Programmes</h2>

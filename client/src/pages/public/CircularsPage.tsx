@@ -34,6 +34,9 @@ export default function CircularsPage() {
     { title: "Management Quota Seat Allocation", date: "Aug 25, 2025", isNew: false },
     { title: "Online Admission Portal Launch", date: "Aug 15, 2025", isNew: false },
   ];
+const hasExam = examCirculars.length > 0;
+const hasAdmissions = admissionCirculars.length > 0;
+const allCirculars = [...examCirculars, ...admissionCirculars];
 
   return (
     <div data-testid="page-circulars">
@@ -53,86 +56,102 @@ export default function CircularsPage() {
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
-            {/* Exam Circulars Card */}
-            <Card className="border-border/60 shadow-lg h-full" data-testid="card-exam-circulars">
-              <CardHeader className="pb-4 border-b border-border/40 bg-muted/30">
-                <CardTitle className="text-xl font-semibold flex items-center gap-2" data-testid="title-exam-circulars">
-                  Exam Circulars
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <ScrollArea className="h-[500px] w-full p-4">
-                  <div className="space-y-1">
-                    {examCirculars.map((item, i) => (
-                      <div 
-                        key={i} 
-                        className="group flex flex-col gap-1.5 p-4 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
-                        data-testid={`circular-exam-${i}`}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                            {item.title}
-                          </span>
-                          {item.isNew && (
-                            <Badge variant="destructive" className="text-[10px] px-2 py-0.5 h-5 shrink-0" data-testid={`badge-new-exam-${i}`}>
-                              NEW
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                          <Calendar className="size-3.5" />
-                          <span>{item.date}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
+     {/* Content Section */}
+<section className="py-16 bg-background border-b border-border/40">
+  <div className="container mx-auto px-4 md:px-8">
+    <h2 className="flex justify-center text-2xl md:text-3xl font-heading font-bold mb-8">
+      Circulars
+    </h2>
 
-            {/* Admissions Circulars Card */}
-            <Card className="border-border/60 shadow-lg h-full" data-testid="card-admissions-circulars">
-              <CardHeader className="pb-4 border-b border-border/40 bg-muted/30">
-                <CardTitle className="text-xl font-semibold flex items-center gap-2" data-testid="title-admissions-circulars">
-                  Admissions Circulars
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-0">
-                <ScrollArea className="h-[500px] w-full p-4">
-                  <div className="space-y-1">
-                    {admissionCirculars.map((item, i) => (
-                      <div 
-                        key={i} 
-                        className="group flex flex-col gap-1.5 p-4 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer border-b border-border/40 last:border-0"
-                        data-testid={`circular-admission-${i}`}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                            {item.title}
-                          </span>
-                          {item.isNew && (
-                            <Badge variant="destructive" className="text-[10px] px-2 py-0.5 h-5 shrink-0" data-testid={`badge-new-admission-${i}`}>
-                              NEW
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                          <Calendar className="size-3.5" />
-                          <span>{item.date}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
+    <div className="overflow-hidden rounded-lg border border-border max-w-6xl mx-auto">
+      {/* Table Header */}
+      <div className="grid grid-cols-[80px_180px_1fr_80px] bg-primary text-primary-foreground text-sm font-semibold">
+        <div className="py-4 text-center">Sl.No</div>
+        <div className="py-4 text-center">Announcement Date</div>
+        <div className="py-4 px-4">Title</div>
+        <div className="py-4 text-center">Info</div>
+      </div>
+
+      {/* Table Body */}
+      <ScrollArea className="h-[420px]">
+        {allCirculars.map((item, index) => (
+          <div
+            key={index}
+            className="
+              grid grid-cols-[80px_180px_1fr_80px]
+              items-center text-sm
+              border-b border-border
+              hover:bg-primary/5
+              transition-colors
+            "
+          >
+            {/* Sl No */}
+            <div className="py-4 text-center font-medium">
+              {index + 1}
+            </div>
+
+            {/* Date */}
+            <div className="py-4 text-center text-muted-foreground">
+              {item.date}
+            </div>
+
+            {/* Title */}
+            <div className="py-4 px-4 flex items-center gap-2">
+              <span className="text-foreground leading-relaxed hover:text-primary transition-colors">
+                {item.title}
+              </span>
+
+              {item.isNew && (
+                <Badge className="bg-primary text-primary-foreground text-[10px] px-1.5 py-0 h-5">
+                  NEW
+                </Badge>
+              )}
+            </div>
+
+            {/* Info Icon */}
+            <div className="py-4 flex justify-center">
+              <Link href="/circulars">
+                <button
+                  aria-label="View circular"
+                  className="
+                    p-2 rounded-full
+                    text-primary
+                    hover:bg-primary/10
+                    transition-colors
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>
+                </button>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        ))}
+
+        {allCirculars.length === 0 && (
+          <div className="py-12 text-center text-muted-foreground text-sm">
+            No circulars available at the moment.
+          </div>
+        )}
+      </ScrollArea>
+    </div>
+  </div>
+</section>
+
+
     </div>
   );
 }

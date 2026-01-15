@@ -45,7 +45,8 @@ const footerSections: FooterSection[] = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-muted/30 pt-16 pb-8">
+   <footer className="border-t border-border/40 bg-muted/30 pt-16 pb-8 shadow-[0_-6px_20px_hsl(var(--primary)_/_0.12)]">
+
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Branding Column */}
@@ -54,10 +55,12 @@ export function Footer() {
               <a className="flex items-center gap-2 font-heading font-bold text-xl text-primary">
                 <Logo size={82} className=" mb-6" />
                 
-                <div className="flex flex-col leading-tight">
-                  <span>VTU online</span>
+                 <div className="flex flex-col leading-tight">
     <span className="text-sm md:text-base font-semibold text-foreground">
       Center for Online Education
+    </span>
+    <span className="text-xs md:text-sm font-medium text-muted-foreground mb-5">
+      VTU – Belagavi
     </span>
   </div>
               </a>
