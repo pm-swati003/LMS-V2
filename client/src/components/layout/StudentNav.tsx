@@ -82,19 +82,24 @@ export function StudentNav() {
 
   return (
     <header className="fixed top-0 z-50 w-full h-16 border-b border-border/40 bg-background/95 backdrop-blur">
-      <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+  <div className="h-16 flex items-center justify-between px-6 md:px-8">
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3">
-          <Logo size={48} />
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-sm font-semibold">
-              Center for Online Education
-            </span>
-            <span className="text-xs text-muted-foreground">
-              VTU – Belagavi
-            </span>
-          </div>
-        </Link>
+       <Link href="/">
+                 <a className="flex items-center gap-3">
+                   <Logo size={56} />
+                   <div className="flex flex-col leading-tight">
+                     <span className="text-sm md:text-base font-semibold text-foreground">
+                       Center for Online Education
+                     </span>
+                     <span className="text-xs md:text-sm font-medium text-muted-foreground">
+                       VTU – Belagavi
+                     </span>
+                     <span className="hidden md:block text-[11px] text-muted-foreground">
+                       Govt. of Karnataka
+                     </span>
+                   </div>
+                 </a>
+               </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-6">
