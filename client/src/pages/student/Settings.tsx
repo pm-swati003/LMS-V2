@@ -37,6 +37,10 @@ export default function Settings() {
             Hey, SWATI PADANAD
           </h1>
           <nav className="text-slate-300 text-sm md:text-base" data-testid="breadcrumb-profile">
+            <Link href="/">
+              <a className="hover:text-white transition-colors">Home</a>
+            </Link>
+            <span className="mx-2">/</span>
             <Link href="/student/dashboard">
               <a className="hover:text-white transition-colors">Dashboard</a>
             </Link>
@@ -76,25 +80,33 @@ export default function Settings() {
                 Profile
               </h2>
 
-              {/* Profile Image Section */}
-              <div className="flex flex-col items-center mb-10">
-                <div className="relative mb-4">
-                  <Avatar className="size-28 border-4 border-border">
-                    <AvatarImage src="https://github.com/shadcn.png" alt="Profile" />
-                    <AvatarFallback className="text-2xl">SP</AvatarFallback>
-                  </Avatar>
-                  <button 
-                    className="absolute bottom-1 right-1 size-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors"
-                    aria-label="Edit profile picture"
-                    data-testid="button-edit-avatar"
-                  >
-                    <Pencil className="size-4" />
-                  </button>
-                </div>
-                <p className="font-medium text-foreground mb-1">Select Your Picture</p>
-                <p className="text-sm text-muted-foreground">Accepted Image Files: JPEG, JPG, PNG</p>
-                <p className="text-sm text-muted-foreground">Accepted Size: 300 × 300 (1MB)</p>
-              </div>
+             {/* Profile Image Section */}
+<div className="flex flex-col items-center mb-10">
+  <div className="relative mb-4">
+    {/* Profile Icon Placeholder */}
+    <div className="size-28 rounded-full bg-muted flex items-center justify-center">
+      <User className="size-16 text-muted-foreground" />
+    </div>
+
+    {/* Edit Button */}
+    <button
+      className="absolute bottom-1 right-1 size-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors"
+      aria-label="Edit profile picture"
+      data-testid="button-edit-avatar"
+    >
+      <Pencil className="size-4" />
+    </button>
+  </div>
+
+  <p className="font-medium text-foreground mb-1">Select Your Picture</p>
+  <p className="text-sm text-muted-foreground">
+    Accepted Image Files: JPEG, JPG, PNG
+  </p>
+  <p className="text-sm text-muted-foreground">
+    Accepted Size: 300 × 300 (1MB)
+  </p>
+</div>
+
 
               {/* Form */}
               <form className="space-y-6">
