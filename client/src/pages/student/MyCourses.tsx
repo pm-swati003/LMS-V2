@@ -4,8 +4,6 @@ import { Progress } from "@/components/ui/progress";
 import { PlayCircle, MoreVertical, Search, Filter } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Link } from "wouter";
-import { SidebarTrigger } from "@/components/ui/sidebar";
-
 
 const MY_COURSES = [
   {
@@ -32,23 +30,10 @@ const MY_COURSES = [
 export default function MyCourses() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-  {/* LEFT SIDE */}
-  <div className="flex items-start gap-3">
-    <SidebarTrigger />
-
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-heading font-bold">My Learning</h1>
           <p className="text-muted-foreground mt-1">Track your progress and continue learning</p>
-        </div>
-        </div>
-        {/* RIGHT SIDE */}
-        
-        <div className="flex items-center gap-2 w-full md:w-auto">
-          <div className="relative flex-1 md:w-64">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search my courses..." className="pl-9 bg-background" />
-          </div>
         </div>
       </div>
 
