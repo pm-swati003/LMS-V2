@@ -1,8 +1,8 @@
 import { useLocation, Link } from "wouter";
-import { useToast } from "@/hooks/use-toast";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Search, CirclePower } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Sidebar,
   SidebarContent,
@@ -31,18 +31,10 @@ export default function StudentLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [location] = useLocation();
-  const [, setLocation] = useLocation();
-  const { toast } = useToast();
+  const [location, setLocation] = useLocation();
 
-  const isDashboardPage = location === "/student/dashboard";
   const isSettingsPage = location === "/student/settings";
-
-  const handleLogout = () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    setLocation("/");
-  };
+  const isDashboardPage = location === "/student/dashboard";
 
   const navigation = [
     { name: "Dashboard", href: "/student/dashboard", icon: LayoutDashboard },
@@ -51,13 +43,22 @@ export default function StudentLayout({
     { name: "Certificates", href: "/student/certificates", icon: GraduationCap },
   ];
 
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    setLocation("/");
+  };
+
   return (
     <>
+      {/* GLOBAL NAVBAR */}
       <StudentNav />
 
+      {/* OFFSET BELOW FIXED NAVBAR */}
       <div className="pt-16">
         <SidebarProvider>
           <div className="flex min-h-[calc(100vh-4rem)] w-full bg-neutral-50">
+
             {/* SIDEBAR */}
             {!isSettingsPage && (
               <Sidebar
@@ -65,9 +66,11 @@ export default function StudentLayout({
                 className="border-r border-border/40 top-16 h-[calc(100vh-4rem)] shadow-[2px_0_8px_rgba(0,0,0,0.04)]"
               >
                 <SidebarHeader className="h-16 flex items-center justify-center border-b border-border/40 px-6">
-                  <span className="font-heading font-bold text-xl text-primary truncate group-data-[collapsible=icon]:hidden">
-                    Student Dashboard
-                  </span>
+                  <div className="flex items-center gap-2 font-heading font-medium text-lg w-full overflow-hidden">
+                    <span className="truncate group-data-[collapsible=icon]:hidden">
+                      Student Corner
+                    </span>
+                  </div>
                 </SidebarHeader>
 
                 <SidebarContent className="px-2 py-4">
@@ -97,9 +100,13 @@ export default function StudentLayout({
                     <SidebarGroupContent>
                       <SidebarMenu>
                         <SidebarMenuItem>
-                          <SidebarMenuButton onClick={handleLogout} tooltip="Logout">
-                            <CirclePower className="size-5 text-destructive" />
-                            <span className="text-destructive">Logout</span>
+                          <SidebarMenuButton
+                            tooltip="Logout"
+                            onClick={handleLogout}
+                            className="cursor-pointer"
+                          >
+                            <CirclePower className="size-5" />
+                            <span>Logout</span>
                           </SidebarMenuButton>
 
                           <SidebarMenuButton asChild tooltip="Settings">
@@ -118,21 +125,33 @@ export default function StudentLayout({
               </Sidebar>
             )}
 
-            {/* MAIN */}
+            {/* MAIN AREA */}
             <SidebarInset className="bg-muted/40">
-              {/* DASHBOARD TOP BAR */}
-              {isDashboardPage && (
-                <div className="flex h-16 items-center gap-4 border-b border-border/30 bg-neutral-50/60 px-6">
-                  {!isSettingsPage && <SidebarTrigger />}
 
-                  <div className="relative max-w-md hidden md:block">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      type="search"
-                      placeholder="Search courses..."
-                      className="w-full rounded-full bg-muted pl-9 md:w-[300px] lg:w-[400px] border-none"
-                    />
+              {/* STUDENT TOP BAR (HIDDEN ON SETTINGS PAGE) */}
+              {!isSettingsPage && (
+                <div className="flex h-16 items-center gap-4 border-b border-border/30 bg-neutral-50/60 px-6">
+                  <SidebarTrigger />
+
+                  <div className="flex-1">
+                    <div className="relative max-w-md hidden md:block">
+                      <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                      <Input
+                        type="search"
+                        placeholder="Search courses..."
+                        className="w-full rounded-full bg-muted pl-9 md:w-[300px] lg:w-[400px] border-none focus-visible:ring-1"
+                      />
+                    </div>
                   </div>
+
+                  {isDashboardPage && (
+                    <Button
+                      size="lg"
+                      className="shadow-lg shadow-primary/20"
+                    >
+                      Resume Learning
+                    </Button>
+                  )}
                 </div>
               )}
 
