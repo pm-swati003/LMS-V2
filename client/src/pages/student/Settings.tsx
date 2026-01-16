@@ -27,7 +27,7 @@ export default function Settings() {
   return (
     <div className="animate-in fade-in duration-500" data-testid="page-settings">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-12 md:py-16 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-8">
+      <section className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 py-12 md:py-16 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-8">
         <div 
           className="absolute inset-0 opacity-20"
           style={{
