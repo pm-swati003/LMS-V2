@@ -181,14 +181,13 @@ export function StudentNav() {
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-80 p-0">
+          <SheetContent
+  side="right"
+  className="w-3/4 max-w-sm p-0"
+>
             <div className="flex justify-between items-center p-4 border-b">
               <span className="font-bold">Menu</span>
-              <SheetClose asChild>
-                <Button variant="ghost" size="icon">
-                  <X className="h-5 w-5" />
-                </Button>
-              </SheetClose>
+              
             </div>
 
             <nav className="p-4 space-y-2">
