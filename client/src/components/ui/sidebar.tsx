@@ -496,41 +496,38 @@ const sidebarMenuButtonVariants = cva(
       size: "default",
     },
 
-    compoundVariants: [
-      {
-        className: `
-          /* ---------------- ICON MODE LAYOUT ---------------- */
-          group-data-[collapsible=icon]:w-12
-          group-data-[collapsible=icon]:h-12
-          group-data-[collapsible=icon]:p-0
-          group-data-[collapsible=icon]:justify-center
+   compoundVariants: [
+  {
+    className: `
+      /* ---------------- ICON MODE LAYOUT ---------------- */
+      group-data-[collapsible=icon]:w-12
+      group-data-[collapsible=icon]:h-12
+      group-data-[collapsible=icon]:p-0
+      group-data-[collapsible=icon]:justify-center
 
-          /* hide labels completely */
-          group-data-[collapsible=icon]:[&>span]:hidden
+      /* hide labels completely */
+      group-data-[collapsible=icon]:[&>span]:hidden
 
-          /* reset button bg */
-          group-data-[collapsible=icon]:bg-transparent
-          group-data-[collapsible=icon]:hover:bg-transparent
-          group-data-[collapsible=icon]:data-[active=true]:bg-transparent
+      /* reset button bg */
+      group-data-[collapsible=icon]:bg-transparent
+      group-data-[collapsible=icon]:hover:bg-transparent
+      group-data-[collapsible=icon]:data-[active=true]:bg-transparent
 
-          /* ---------------- ICON ITSELF ---------------- */
-          group-data-[collapsible=icon]:[&>svg]:w-6
-          group-data-[collapsible=icon]:[&>svg]:h-6
-          group-data-[collapsible=icon]:[&>svg]:rounded-lg
-          group-data-[collapsible=icon]:[&>svg]:transition-all
+      /* ---------------- ICON ITSELF ---------------- */
+      group-data-[collapsible=icon]:[&>svg]:w-6
+      group-data-[collapsible=icon]:[&>svg]:h-6
+      group-data-[collapsible=icon]:[&>svg]:rounded-none
+      group-data-[collapsible=icon]:[&>svg]:transition-colors
 
-          /* hover → icon only */
-          group-data-[collapsible=icon]:hover:[&>svg]:bg-sidebar-accent
-          group-data-[collapsible=icon]:hover:[&>svg]:ring-1
-          group-data-[collapsible=icon]:hover:[&>svg]:ring-primary/30
+      /* hover → optional subtle accent (no ring) */
+      group-data-[collapsible=icon]:hover:[&>svg]:text-sidebar-accent-foreground
 
-          /* active → icon only */
-          group-data-[collapsible=icon]:data-[active=true]:[&>svg]:bg-sidebar-accent
-          group-data-[collapsible=icon]:data-[active=true]:[&>svg]:ring-2
-          group-data-[collapsible=icon]:data-[active=true]:[&>svg]:ring-primary/60
-        `,
-      },
-    ],
+      /* active → PRIMARY COLOR (NO RING) */
+      group-data-[collapsible=icon]:data-[active=true]:[&>svg]:text-primary
+    `,
+  },
+],
+
   }
 )
 
