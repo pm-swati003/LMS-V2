@@ -182,3 +182,12 @@
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20;
   }
 }
+
+@layer utilities {
+  .shadow-brand {
+    box-shadow:
+      0 -6px 20px hsl(var(--primary) / 0.12),
+      0 4px 16px hsl(var(--primary) / 0.08);
+  }
+}
+

@@ -41,20 +41,32 @@ const allCirculars = [...examCirculars, ...admissionCirculars];
   return (
     <div data-testid="page-circulars">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4" data-testid="heading-circulars">
-            Circulars
-          </h1>
-          <nav className="text-slate-300 text-sm md:text-base" data-testid="breadcrumb-circulars">
-            <Link href="/">
-              <a className="hover:text-white transition-colors">Home</a>
-            </Link>
-            <span className="mx-2">›</span>
-            <span className="text-white">Circulars</span>
-          </nav>
-        </div>
-      </section>
+      <section className="relative overflow-hidden bg-foreground text-background py-16 md:py-24">
+  <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/90 to-foreground"></div>
+
+  <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
+    <h1
+      className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+      data-testid="heading-circulars"
+    >
+      Circulars
+    </h1>
+
+    <nav
+      className="text-background/80 text-sm md:text-base"
+      data-testid="breadcrumb-circulars"
+    >
+      <Link href="/">
+        <a className="hover:text-background transition-colors">
+          Home
+        </a>
+      </Link>
+      <span className="mx-2">›</span>
+      <span className="text-background">Circulars</span>
+    </nav>
+  </div>
+</section>
+
 
      {/* Content Section */}
 <section className="py-16 bg-background border-b border-border/40">
@@ -66,10 +78,10 @@ const allCirculars = [...examCirculars, ...admissionCirculars];
     <div className="overflow-hidden rounded-lg border border-border max-w-6xl mx-auto">
       {/* Table Header */}
       <div className="grid grid-cols-[80px_180px_1fr_80px] bg-primary text-primary-foreground text-sm font-semibold">
-        <div className="py-4 text-center">Sl.No</div>
-        <div className="py-4 text-center">Announcement Date</div>
-        <div className="py-4 px-4">Title</div>
-        <div className="py-4 text-center">Info</div>
+        <div className="py-3 text-center">Sl.No</div>
+        <div className="py-3 text-center">Announcement Date</div>
+        <div className="py-3 px-4">Title</div>
+        <div className="py-3 text-center">Info</div>
       </div>
 
       {/* Table Body */}
@@ -86,17 +98,17 @@ const allCirculars = [...examCirculars, ...admissionCirculars];
             "
           >
             {/* Sl No */}
-            <div className="py-4 text-center font-medium">
+            <div className="py-3 text-center font-medium">
               {index + 1}
             </div>
 
             {/* Date */}
-            <div className="py-4 text-center text-muted-foreground">
+            <div className="py-3 text-center text-muted-foreground">
               {item.date}
             </div>
 
             {/* Title */}
-            <div className="py-4 px-4 flex items-center gap-2">
+            <div className="py-3 px-4 flex items-center gap-2">
               <span className="text-foreground leading-relaxed hover:text-primary transition-colors">
                 {item.title}
               </span>
@@ -109,7 +121,7 @@ const allCirculars = [...examCirculars, ...admissionCirculars];
             </div>
 
             {/* Info Icon */}
-            <div className="py-4 flex justify-center">
+            <div className="py-3 flex justify-center">
               <Link href="/circulars">
                 <button
                   aria-label="View circular"

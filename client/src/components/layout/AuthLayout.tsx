@@ -4,7 +4,8 @@ import Logo from "@/components/brand/Logo";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen w-full">
+    <div className="flex min-h-screen w-full bg-background text-foreground">
+
       {/* Left Panel - Form */}
 <div className="flex flex-1 flex-col justify-center px-8 py-12 sm:px-12 lg:flex-none lg:w-1/2 xl:w-[480px]">
   
@@ -19,6 +20,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           <span className="text-sm md:text-base font-semibold text-foreground">
             Center for Online Education
           </span>
+          
           <span className="text-[11px] text-muted-foreground">
             Govt. of Karnataka
           </span>

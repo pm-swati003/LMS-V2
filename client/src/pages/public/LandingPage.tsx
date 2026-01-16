@@ -12,6 +12,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
+
 export default function LandingPage() {
   const examCirculars = [
     { title: "Final Semester Exam Schedule Declared", date: "Oct 24, 2025", isNew: true },
@@ -37,51 +38,70 @@ const allCirculars = [...examCirculars, ...admissionCirculars];
   return (
     <div className="animate-in fade-in duration-500">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-900 text-white min-h-[600px] flex items-center">
-        <div className="absolute inset-0 z-0">
-           <img 
-             src="vtu banner.jpg"
-             alt="University Campus" 
-             className="w-full h-full object-cover opacity-30"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 md:px-8 relative z-10 py-20">
-          <div className="max-w-2xl space-y-6">
-            <Badge variant="secondary" className="bg-blue-500/20 text-blue-200 border-none px-3 py-1">
-              Admissions Open for Fall 2026
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
-              Shape Your Future with World-Class Education
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-              Join a global community of learners and innovators. Experience flexible, high-quality online learning designed for the modern world.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/programs">
-              <Button size="lg" className="h-14 px-8 text-lg whitespace-nowrap">Explore Programs</Button>
-              </Link>
-              <Link href="/auth/login">
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white whitespace-nowrap">
-                  Student Portal
-                </Button>
-              </Link>
+      {/* Hero Section */}
+<section className="relative overflow-hidden min-h-[600px] flex items-center bg-foreground text-background">
+  <div className="absolute inset-0 z-0">
+    <img
+      src="vtu banner.jpg"
+      alt="University Campus"
+      className="w-full h-full object-cover opacity-30"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-foreground via-foreground/85 to-transparent"></div>
+  </div>
+
+  <div className="container mx-auto px-4 md:px-8 relative z-10 py-20">
+    <div className="max-w-2xl space-y-6">
+      <Badge
+        variant="secondary"
+        className="bg-primary/20 text-primary-foreground border-none px-3 py-1"
+      >
+        Admissions Open for Fall 2026
+      </Badge>
+
+      <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
+        Shape Your Future with World-Class Education
+      </h1>
+
+      <p className="text-lg md:text-xl text-background/80 leading-relaxed max-w-xl">
+        Join a global community of learners and innovators. Experience flexible,
+        high-quality online learning designed for the modern world.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 pt-4">
+        <Link href="/programs">
+          <Button size="lg" className="h-14 px-8 text-lg whitespace-nowrap">
+            Explore Programs
+          </Button>
+        </Link>
+
+        <Link href="/auth/login">
+          <Button
+            size="lg"
+            variant="outline"
+            className="h-14 px-8 text-lg border-background/30 text-background hover:bg-background/10 whitespace-nowrap"
+          >
+            Student Portal
+          </Button>
+        </Link>
+      </div>
+
+      <div className="pt-8 flex flex-wrap items-center gap-4 text-sm text-background/70">
+        <div className="flex -space-x-2">
+          {["A", "S", "R", "K"].map((initial, i) => (
+            <div
+              key={i}
+              className="size-8 rounded-full bg-background/10 border-2 border-foreground flex items-center justify-center text-xs font-bold text-background"
+            >
+              {initial}
             </div>
-            
-            <div className="pt-8 flex flex-wrap items-center gap-4 text-sm text-slate-400">
-               <div className="flex -space-x-2">
-                 {["A","S","R","K"].map((initial, i) => (
-                   <div key={i} className="size-8 rounded-full bg-slate-700 border-2 border-slate-900 flex items-center justify-center text-xs font-bold text-white">
-                     {initial}
-                   </div>
-                 ))}
-               </div>
-               <p>Joined by 10,000+ students worldwide</p>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+        <p>Joined by 10,000+ students worldwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
       {/* Circulars Section */}
@@ -153,131 +173,173 @@ const allCirculars = [...examCirculars, ...admissionCirculars];
       <OnlineProgrammesSection />
 
       {/* Benefits of VTU Online Programmes */}
-      <section className="py-24 bg-background shadow-[0_-4px_16px_hsl(var(--primary)_/_0.10),0_4px_16px_hsl(var(--primary)_/_0.08)]">
+<section className="py-24 bg-background shadow-brand">
+  <div className="container mx-auto px-4 md:px-8">
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+        Benefits of VTU Online Programmes
+      </h2>
+      <p className="text-muted-foreground text-lg">
+        Experience world-class education with dedicated support at every step of your learning journey.
+      </p>
+    </div>
 
+    {/* Block 1 */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+      <div className="relative">
+        <div className="absolute -inset-4 bg-primary/10 rounded-3xl -rotate-1"></div>
+        <img
+          src="learn frm exp.jpg"
+          alt="University campus"
+          className="relative rounded-2xl shadow-lg w-full aspect-[4/3] object-cover"
+        />
+      </div>
 
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Benefits of VTU Online Programmes</h2>
-            <p className="text-muted-foreground text-lg">
-              Experience world-class education with dedicated support at every step of your learning journey.
-            </p>
+      <div className="space-y-6">
+        <h3 className="text-2xl md:text-3xl font-heading font-bold">
+          Learn From the Experts
+        </h3>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Learn from carefully curated content designed and reviewed by experienced faculty from VTU and leading industry professionals.
+        </p>
+
+        <div className="flex flex-wrap gap-6 sm:gap-8 py-4">
+          <div className="min-w-[100px]">
+            <div className="text-2xl sm:text-3xl font-bold text-primary">1000+</div>
+            <p className="text-sm text-muted-foreground">Subject Experts</p>
           </div>
-
-          {/* Block 1: Learn From the Experts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-1"></div>
-              <img 
-                src="learn frm exp.jpg" 
-                alt="University campus" 
-                className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
-              />
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold">Learn From the Experts</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Learn from carefully curated content designed and reviewed by experienced faculty from VTU and leading industry professionals. Every course is structured to deliver academic depth and practical relevance.
-              </p>
-              <div className="flex flex-wrap gap-6 sm:gap-8 py-4">
-                <div className="min-w-[100px]">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">1000+</div>
-                  <p className="text-sm text-muted-foreground">Subject Experts</p>
-                </div>
-                <div className="min-w-[100px]">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">4.7/5</div>
-                  <p className="text-sm text-muted-foreground">Average Content Rating</p>
-                </div>
-              </div>
-              <Link href="/courses">
-                <Button size="lg" className="h-12 px-6">View Courses</Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Block 2: Dedicated Programme Coordinators */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-            <div className="space-y-6 order-2 lg:order-1">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold">Dedicated Programme & Course Coordinators</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Each programme is supported by dedicated academic coordinators who ensure smooth course delivery, timely guidance, and continuous learner support throughout the programme.
-              </p>
-              <div className="flex flex-wrap gap-6 sm:gap-8 py-4">
-                <div className="min-w-[100px]">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">20,000+</div>
-                  <p className="text-sm text-muted-foreground">Doubt Solving Hours</p>
-                </div>
-                <div className="min-w-[100px]">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">200+</div>
-                  <p className="text-sm text-muted-foreground">Course Coordinators</p>
-                </div>
-              </div>
-              <Link href="/programs">
-                <Button size="lg" variant="outline" className="h-12 px-6">Learn More</Button>
-              </Link>
-            </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="absolute -inset-4 bg-primary/5 rounded-3xl rotate-1"></div>
-              <img 
-                src="prgm coor.jpg" 
-                alt="University building" 
-                className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Block 3: Technical Support Cell */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/5 rounded-3xl -rotate-1"></div>
-              <img 
-                src="tech coor.jpg" 
-                alt="Technical support team" 
-                className="relative rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
-              />
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold">Dedicated Technical Support Cell</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Our dedicated technical support team ensures uninterrupted learning by providing prompt assistance for technical and platform-related queries.
-              </p>
-              <div className="space-y-3 py-4">
-                <div className="flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Users className="size-5 text-primary" />
-                  </div>
-                  <span className="text-muted-foreground">1:1 Dedicated Support</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Calendar className="size-5 text-primary" />
-                  </div>
-                  <span className="text-muted-foreground">Telephonic Support: Mon–Sat, 9:30 AM – 5:30 PM</span>
-                </div>
-              </div>
-              <Link href="/contact">
-                <Button size="lg" className="h-12 px-6 bg-primary/90 hover:bg-primary">Reach Us</Button>
-              </Link>
-            </div>
+          <div className="min-w-[100px]">
+            <div className="text-2xl sm:text-3xl font-bold text-primary">4.7/5</div>
+            <p className="text-sm text-muted-foreground">Average Content Rating</p>
           </div>
         </div>
-      </section>
+
+        <Link href="/courses">
+          <Button size="lg" className="h-12 px-6">
+            View Courses
+          </Button>
+        </Link>
+      </div>
+    </div>
+
+    {/* Block 2 */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+      <div className="space-y-6 order-2 lg:order-1">
+        <h3 className="text-2xl md:text-3xl font-heading font-bold">
+          Dedicated Programme & Course Coordinators
+        </h3>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Each programme is supported by dedicated academic coordinators who ensure smooth course delivery.
+        </p>
+
+        <div className="flex flex-wrap gap-6 sm:gap-8 py-4">
+          <div className="min-w-[100px]">
+            <div className="text-2xl sm:text-3xl font-bold text-primary">20,000+</div>
+            <p className="text-sm text-muted-foreground">Doubt Solving Hours</p>
+          </div>
+          <div className="min-w-[100px]">
+            <div className="text-2xl sm:text-3xl font-bold text-primary">200+</div>
+            <p className="text-sm text-muted-foreground">Course Coordinators</p>
+          </div>
+        </div>
+
+        <Link href="/programs">
+          <Button size="lg" variant="outline" className="h-12 px-6">
+            Learn More
+          </Button>
+        </Link>
+      </div>
+
+      <div className="relative order-1 lg:order-2">
+        <div className="absolute -inset-4 bg-primary/10 rounded-3xl rotate-1"></div>
+        <img
+          src="prgm coor.jpg"
+          alt="University building"
+          className="relative rounded-2xl shadow-lg w-full aspect-[4/3] object-cover"
+        />
+      </div>
+    </div>
+
+    {/* Block 3 */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative">
+        <div className="absolute -inset-4 bg-primary/10 rounded-3xl -rotate-1"></div>
+        <img
+          src="tech coor.jpg"
+          alt="Technical support team"
+          className="relative rounded-2xl shadow-lg w-full aspect-[4/3] object-cover"
+        />
+      </div>
+
+      <div className="space-y-6">
+        <h3 className="text-2xl md:text-3xl font-heading font-bold">
+          Dedicated Technical Support Cell
+        </h3>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Our dedicated technical support team ensures uninterrupted learning.
+        </p>
+
+        <div className="space-y-3 py-4">
+          <div className="flex items-center gap-3">
+            <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <Users className="size-5 text-primary" />
+            </div>
+            <span className="text-muted-foreground">1:1 Dedicated Support</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <Calendar className="size-5 text-primary" />
+            </div>
+            <span className="text-muted-foreground">
+              Telephonic Support: Mon–Sat, 9:30 AM – 5:30 PM
+            </span>
+          </div>
+        </div>
+
+        <Link href="/contact">
+          <Button size="lg" className="h-12 px-6">
+            Reach Us
+          </Button>
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-white text-center">
-         <div className="container mx-auto px-4">
-           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Ready to Start Your Journey?</h2>
-           <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-             Join thousands of students transforming their careers with VTU online.
-           </p>
-           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button size="lg" variant="secondary" className="h-14 px-8 text-lg text-primary whitespace-nowrap">Apply Now</Button>
-             <Link href="/contact">
-               <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white whitespace-nowrap">Contact Admissions</Button>
-             </Link>
-           </div>
-         </div>
-      </section>
+<section className="py-24 bg-primary text-primary-foreground text-center">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+      Ready to Start Your Journey?
+    </h2>
+
+    <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10">
+      Join thousands of students transforming their careers with VTU online.
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <Button
+        size="lg"
+        variant="secondary"
+        className="h-14 px-8 text-lg whitespace-nowrap"
+      >
+        Apply Now
+      </Button>
+
+      <Link href="/contact">
+        <Button
+          size="lg"
+          variant="outline"
+          className="h-14 px-8 text-lg border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 whitespace-nowrap"
+        >
+          Contact Admissions
+        </Button>
+      </Link>
+    </div>
+  </div>
+</section>
+
 
     </div>
   );
@@ -316,11 +378,12 @@ function OnlineProgrammesSection() {
   const filteredPrograms = allPrograms.filter(p => p.filter === activeCategory);
 
   return (
-    <section className="py-24 bg-background shadow-[0_-4px_16px_hsl(var(--primary)_/_0.10),0_4px_16px_hsl(var(--primary)_/_0.08)]">
-
+    <section className="py-24 bg-background shadow-brand">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Online Programmes</h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+            Our Online Programmes
+          </h2>
           <p className="text-muted-foreground text-lg">
             Choose from high-quality online programmes from VTU
           </p>
@@ -333,7 +396,9 @@ function OnlineProgrammesSection() {
               <CollapsibleTrigger asChild>
                 <Button variant="outline" className="w-full justify-between">
                   {activeCategory}
-                  <ChevronDown className={`size-4 transition-transform ${mobileMenuOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`size-4 transition-transform ${mobileMenuOpen ? "rotate-180" : ""}`}
+                  />
                 </Button>
               </CollapsibleTrigger>
               <CollapsibleContent className="mt-2">
@@ -347,7 +412,7 @@ function OnlineProgrammesSection() {
                       }}
                       className={`w-full text-left px-4 py-2 rounded-md text-sm transition-colors ${
                         activeCategory === cat
-                          ? "bg-primary text-white"
+                          ? "bg-muted text-foreground"
                           : "hover:bg-muted text-muted-foreground"
                       }`}
                     >
@@ -366,9 +431,9 @@ function OnlineProgrammesSection() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                  className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     activeCategory === cat
-                      ? "bg-primary text-white shadow-md"
+                      ? "bg-muted text-foreground"
                       : "hover:bg-muted text-muted-foreground"
                   }`}
                 >
@@ -383,7 +448,7 @@ function OnlineProgrammesSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 auto-rows-fr">
               {filteredPrograms.map((program, i) => (
                 <Link key={i} href={`/courses/${program.slug}`} className="block h-full">
-                  <Card className="group cursor-pointer overflow-hidden border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                  <Card className="group cursor-pointer overflow-hidden border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
                     <div className="aspect-video relative overflow-hidden shrink-0">
                       <img
                         src={program.image}
@@ -391,11 +456,12 @@ function OnlineProgrammesSection() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute top-3 left-3">
-                        <Badge className="bg-primary/90 text-white hover:bg-primary backdrop-blur-sm text-xs">
+                        <Badge className="bg-primary/90 text-primary-foreground text-xs">
                           {program.category}
                         </Badge>
                       </div>
                     </div>
+
                     <CardContent className="p-4 flex-1 flex flex-col">
                       <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2 min-h-[3rem]">
                         {program.title}
@@ -408,13 +474,15 @@ function OnlineProgrammesSection() {
 
             {filteredPrograms.length === 0 && (
               <div className="text-center py-12 text-muted-foreground">
-                <p>No programmes found in this category.</p>
+                No programmes found in this category.
               </div>
             )}
 
             <div className="text-center mt-10">
               <Link href="/programs">
-                <Button variant="outline" size="lg">View All Programmes</Button>
+                <Button variant="outline" size="lg">
+                  View All Programmes
+                </Button>
               </Link>
             </div>
           </div>
@@ -423,3 +491,5 @@ function OnlineProgrammesSection() {
     </section>
   );
 }
+
+  
