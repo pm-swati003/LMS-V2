@@ -197,14 +197,17 @@ export default function PublicNavbar() {
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-full sm:w-80 p-0 flex flex-col">
+         <SheetContent
+  side="right"
+  className="w-3/4 max-w-sm p-0"
+>
             <div className="flex items-center justify-between p-4 border-b">
               <span className="font-heading font-bold text-lg text-primary">Menu</span>
-              <SheetClose asChild>
+              {/* <SheetClose asChild>
                 <Button variant="ghost" size="icon">
                   <X className="h-5 w-5" />
                 </Button>
-              </SheetClose>
+              </SheetClose> */}
             </div>
 
             <div className="flex-1 overflow-y-auto p-4">

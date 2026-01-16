@@ -1,71 +1,111 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { MapPin } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function AboutPage() {
   return (
-    <div className="animate-in fade-in duration-500 bg-white min-h-screen pb-20">
-      
+    <div className="animate-in fade-in duration-500 bg-background min-h-screen pb-20">
+
       {/* 1. Hero / Banner Section */}
-      <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-         {/* Abstract Background */}
-         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-slate-900 opacity-90"></div>
-          <svg className="absolute w-full h-full text-white/5 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-             <path d="M-10 80 Q 50 20 110 80" stroke="currentColor" strokeWidth="0.5" fill="none" />
-             <path d="M-10 90 Q 50 30 110 90" stroke="currentColor" strokeWidth="0.5" fill="none" />
-          </svg>
-        </div>
+      <section className="relative overflow-hidden bg-foreground text-background py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-foreground via-foreground/90 to-foreground" />
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">About Us</h1>
-          <div className="flex items-center justify-center gap-2 text-sm text-slate-300">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">
+            About Us
+          </h1>
+
+          <div className="flex items-center justify-center gap-2 text-sm text-background/80">
+            <Link href="/" className="hover:text-background transition-colors">
+              Home
+            </Link>
             <span>/</span>
-            <span className="text-white font-medium">About Us</span>
+            <span className="text-background font-medium">About Us</span>
           </div>
         </div>
       </section>
 
-      {/* 2. University Overview Section */}
+      {/* 2. University Overview */}
       <section className="py-16 md:py-24 container mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-2">Visvesvaraya Technological University</h2>
-          <p className="text-muted-foreground text-lg">Public university in Belagavi, Karnataka</p>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-2">
+            Visvesvaraya Technological University
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Public university in Belagavi, Karnataka
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>
-              VTU is one of the largest Technological Universities in India with 24 years of Tradition of excellence in Engineering & Technical Education, Research and Innovations. It came into existence in the year 1998 to cater the needs of Indian industries for trained technical manpower with practical experience and sound theoretical knowledge.
-            </p>
-            <p>
-              University has very successfully achieved the tremendous task of bringing various colleges affiliated earlier to different Universities, with different syllabi, different procedures and different traditions under one umbrella.
-            </p>
-            <p>
-              The university is currently having 182 affiliated colleges, 1 constituent college and 25 Autonomous colleges with undergraduate programs in 37 disciplines, PG programs in 96 disciplines and Ph.D & M.Sc(Engg.) research programs with 7 faculty, over 3 lakhs Engineering Students study in the various institutes affiliated to the University.
-            </p>
-            <p>
-              The University has revised the syllabus for UG and PG from the academic year 2014-15, it has four regional centers across the State of Karnataka. University is comprised of a multi-disciplinary and multi-level institution offering wide ranging programmes in engineering, technology and Management. The University is making steady progress in developing and providing best technical environment for education and will continue to serve the nation in coming years.
-            </p>
-            <p>
-              Equipped with the extremely rich resources of an outstanding student body and faculty strong partnerships with business, industry, and government and support from alumni and friends, VTU is designing a future of global preeminence, leadership, and service.
-            </p>
-          </div>
-          
-          <div className="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center relative overflow-hidden group">
-             {/* Placeholder Image */}
-             <svg className="w-32 h-32 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-               <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-               <circle cx="9" cy="9" r="2"/>
-               <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
-             </svg>
-          </div>
-        </div>
+        <Card className="overflow-hidden max-w-6xl mx-auto">
+
+          <CardContent className="p-0">
+         <div className="grid grid-cols-1 lg:grid-cols-2 h-[78vh] max-h-[78vh]">
+
+
+
+              {/* Scrollable Content */}
+              <ScrollArea className="h-full px-8 py-8">
+  <div className="space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
+    
+    <p>
+      VTU is one of the largest Technological Universities in India with 24 years of
+      Tradition of excellence in Engineering & Technical Education, Research and
+      Innovations. It came into existence in the year 1998 to cater the needs of
+      Indian industries for trained technical manpower with practical experience and
+      sound theoretical knowledge.
+    </p>
+
+    <p>
+      University has very successfully achieved the tremendous task of bringing
+      various colleges affiliated earlier to different Universities, with different
+      syllabi, different procedures and different traditions under one umbrella.
+    </p>
+
+    <p>
+      The university is currently having 182 affiliated colleges, 1 constituent
+      college and 25 Autonomous colleges with undergraduate programs in 37
+      disciplines, PG programs in 96 disciplines and Ph.D & M.Sc(Engg.) research
+      programs with 7 faculty, over 3 lakhs Engineering Students study in the various
+      institutes affiliated to the University.
+    </p>
+
+    <p>
+      The University has revised the syllabus for UG and PG from the academic year
+      2014-15, it has four regional centers across the State of Karnataka. University
+      is comprised of a multi-disciplinary and multi-level institution offering wide
+      ranging programmes in engineering, technology and Management. The University
+      is making steady progress in developing and providing best technical
+      environment for education and will continue to serve the nation in coming
+      years.
+    </p>
+
+    <p>
+      Equipped with the extremely rich resources of an outstanding student body and
+      faculty strong partnerships with business, industry, and government and
+      support from alumni and friends, VTU is designing a future of global
+      preeminence, leadership, and service.
+    </p>
+
+  </div>
+</ScrollArea>
+
+
+              {/* Fixed Image */}
+              <div className="relative h-full overflow-hidden">
+                <img
+                  src="/public/vtu-belagavi.jpg"
+                  alt="VTU Belagavi Campus"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+
+            </div>
+          </CardContent>
+        </Card>
       </section>
 
-      {/* 3. Regional Centers Section */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/20">
+        {/* 3. Regional Centers Section */}
+      <section className="py-16 bg-slate-50 dark:bg-slate-900/20 shadow-brand">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold mb-2">Regional Centers</h2>
@@ -99,37 +139,67 @@ export default function AboutPage() {
       </section>
 
       {/* 4. About Centre for Online Education */}
-      <section className="py-16 md:py-24 container mx-auto px-4 md:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold">About Centre for Online Education</h2>
+      
+<section className="py-16 md:py-24 container mx-auto px-4 md:px-8">
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-heading font-bold">
+      About Centre for Online Education
+    </h2>
+  </div>
+
+  <Card className="overflow-hidden">
+    <CardContent className="p-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-[76vh] max-h-[76vh]">
+
+        {/* LEFT — Fixed Image */}
+        <div className="relative h-full overflow-hidden">
+          <img
+            src="/public/vtu-online.jpg"
+            alt="Centre for Online Education"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <div className="bg-slate-100 rounded-xl aspect-square flex items-center justify-center relative overflow-hidden">
-             {/* Placeholder Image */}
-             <svg className="w-32 h-32 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-               <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-               <circle cx="9" cy="9" r="2"/>
-               <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
-             </svg>
-          </div>
-
+        {/* RIGHT — Scrollable Content */}
+        <ScrollArea className="h-full px-6 py-6">
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              The expansion of higher education is a significant area of attention for creating a knowledge based economy. The Gross Enrollment Ratio (GER) must be doubled from current levels to have a major influence on the same. This need has been extensively researched and raised by numerous policy planners, commissions, and considerate educators. The National Knowledge Commission (NKC) has released a number of educational research institute and reform-related policies that are necessary for India to compete in the knowledge economy and knowledge intensive service industries. The Role of Online Learning System (OL) becomes significant and unique.
+              The expansion of higher education is a significant area of attention for creating a
+              knowledge based economy. The Gross Enrollment Ratio (GER) must be doubled from current
+              levels to have a major influence on the same. This need has been extensively researched
+              and raised by numerous policy planners, commissions, and considerate educators. The
+              National Knowledge Commission (NKC) has released a number of educational research
+              institute and reform-related policies that are necessary for India to compete in the
+              knowledge economy and knowledge intensive service industries. The Role of Online
+              Learning System (OL) becomes significant and unique.
             </p>
+
             <p>
-              The Online Learning System (OL) assumes a crucial role in achieving the objectives under this framework. OL has established itself as a powerful tool for educational empowerment of many learners who are denied access to conventional 'face-to-face' education for a variety of reasons. By utilizing cutting-edge technology, OL has the ability to provide education to everyone and everywhere. People who live in areas where it is challenging for teachers to reach them would benefit from this.
+              The Online Learning System (OL) assumes a crucial role in achieving the objectives
+              under this framework. OL has established itself as a powerful tool for educational
+              empowerment of many learners who are denied access to conventional ‘face-to-face’
+              education for a variety of reasons. By utilizing cutting-edge technology, OL has the
+              ability to provide education to everyone and everywhere. People who live in areas
+              where it is challenging for teachers to reach them would benefit from this.
             </p>
+
             <p>
-              The VTU-COE established in the year of 2022 with the goal of providing multiple of programmes in management, computer applications. Currently VTU-COE offers 3 UG programmes, 5 PG programmes in Computer Applications, and 5 PG Programmes in Management and also PG Diploma programmes in management and computer science field.
+              The VTU-COE established in the year of 2022 with the goal of providing multiple of
+              programmes in management, computer applications. Currently VTU-COE offers 3 UG
+              programmes, 5 PG programmes in Computer Applications, and 5 PG Programmes in Management
+              and also PG Diploma programmes in management and computer science field.
             </p>
           </div>
-        </div>
-      </section>
+        </ScrollArea>
+
+      </div>
+    </CardContent>
+  </Card>
+</section>
+
 
       {/* 5. Mission of COE Section */}
-      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/20">
+      <section className="py-16 md:py-20 bg-slate-50 dark:bg-slate-900/20 shadow-brand">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-heading font-bold">Mission of COE</h2>
@@ -189,7 +259,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. Hon'ble Vice Chancellor Message */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white shadow-brand">
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold uppercase tracking-wide">Hon'ble Vice Chancellor Message</h2>
@@ -199,11 +269,11 @@ export default function AboutPage() {
             <div className="md:col-span-1">
               <div className="bg-white rounded-xl aspect-[3/4] flex items-center justify-center border border-border shadow-sm p-4">
                  {/* Placeholder Image */}
-                 <svg className="w-full h-full text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                   <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                   <circle cx="9" cy="9" r="2"/>
-                   <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
-                 </svg>
+                <img
+                 src="/public/Dr_S_Vidyashankar.jpg"
+                 alt="Course cover"
+                 className="w-full h-full object-cover"/>
+
               </div>
             </div>
             
