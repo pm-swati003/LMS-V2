@@ -18,6 +18,11 @@ import { User, Pencil } from "lucide-react";
 
 export default function Settings() {
   const [gender, setGender] = useState("male");
+  const user = {
+  firstName: "FirstName",
+  lastName: "LastName",
+};
+
 
   return (
     <div className="animate-in fade-in duration-500" data-testid="page-settings">
@@ -33,9 +38,10 @@ export default function Settings() {
         />
         <div className="absolute inset-0 bg-slate-900/60" />
         <div className="container mx-auto px-6 md:px-8 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3" data-testid="heading-hero">
-            Hey, SWATI PADANAD
-          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
+  Hey, {user.firstName} {user.lastName}
+</h1>
+
           <nav className="text-slate-300 text-sm md:text-base" data-testid="breadcrumb-profile">
             <Link href="/">
               <a className="hover:text-white transition-colors">Home</a>
@@ -57,7 +63,10 @@ export default function Settings() {
           <div className="lg:sticky lg:top-24">
             <div className="mb-6">
               <p className="text-sm text-muted-foreground mb-1">Logged in as</p>
-              <h3 className="font-semibold text-lg text-foreground">SWATI PADANAD</h3>
+              <h3 className="font-semibold text-lg text-foreground">
+  {user.firstName} {user.lastName}
+</h3>
+
             </div>
             
             <nav className="space-y-1">
@@ -117,7 +126,6 @@ export default function Settings() {
                     <Input 
                       id="firstName" 
                       placeholder="Enter first name" 
-                      defaultValue="Swati"
                       data-testid="input-first-name"
                     />
                   </div>
@@ -126,7 +134,6 @@ export default function Settings() {
                     <Input 
                       id="lastName" 
                       placeholder="Enter last name" 
-                      defaultValue="Padanad"
                       data-testid="input-last-name"
                     />
                   </div>
@@ -139,7 +146,6 @@ export default function Settings() {
                     id="email" 
                     type="email" 
                     placeholder="Enter email address" 
-                    defaultValue="swati.padanad@vtu.ac.in"
                     data-testid="input-email"
                   />
                 </div>
@@ -151,7 +157,6 @@ export default function Settings() {
                     id="phone" 
                     type="tel" 
                     placeholder="Enter phone number" 
-                    defaultValue="+91 9876543210"
                     data-testid="input-phone"
                   />
                 </div>
@@ -160,7 +165,7 @@ export default function Settings() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="college">College Name</Label>
-                    <Select defaultValue="vtu-main">
+                    <Select>
                       <SelectTrigger id="college" data-testid="select-college">
                         <SelectValue placeholder="Select college" />
                       </SelectTrigger>
@@ -175,7 +180,7 @@ export default function Settings() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="branch">Branch</Label>
-                    <Select defaultValue="cse">
+                    <Select>
                       <SelectTrigger id="branch" data-testid="select-branch">
                         <SelectValue placeholder="Select branch" />
                       </SelectTrigger>
@@ -194,7 +199,7 @@ export default function Settings() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="batch">Batch</Label>
-                    <Select defaultValue="2024">
+                    <Select>
                       <SelectTrigger id="batch" data-testid="select-batch">
                         <SelectValue placeholder="Select batch" />
                       </SelectTrigger>
@@ -212,7 +217,6 @@ export default function Settings() {
                     <Input 
                       id="usn" 
                       placeholder="Enter USN" 
-                      defaultValue="1VT21CS001"
                       data-testid="input-usn"
                     />
                   </div>
@@ -226,7 +230,6 @@ export default function Settings() {
                     placeholder="Write a short bio about yourself..." 
                     rows={4}
                     className="resize-none"
-                    defaultValue="Passionate learner and aspiring software developer. Currently pursuing B.Tech in Computer Science at VTU."
                     data-testid="textarea-bio"
                   />
                 </div>
