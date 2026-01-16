@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Download, Share2, Award, Calendar } from "lucide-react";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 const CERTIFICATES = [
   {
@@ -25,9 +26,15 @@ const CERTIFICATES = [
 export default function Certificates() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+  {/* LEFT SIDE */}
+  <div className="flex items-start gap-3">
+    <SidebarTrigger />
       <div>
         <h1 className="text-3xl font-heading font-bold">My Certificates</h1>
         <p className="text-muted-foreground mt-1">View and download your earned credentials</p>
+      </div>
+      </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
