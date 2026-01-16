@@ -20,7 +20,7 @@ export default function Dashboard() {
           <h1 className="text-3xl font-heading font-bold text-foreground">Hello, Student!</h1>
           <p className="text-muted-foreground mt-1">Here's your learning progress for this week.</p>
         </div>
-        <Button size="lg" className="shadow-lg shadow-primary/20">Resume Learning</Button>
+       
       </div>
 
       {/* KPI Cards */}
