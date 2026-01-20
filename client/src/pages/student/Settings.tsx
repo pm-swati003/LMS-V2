@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
@@ -27,28 +26,23 @@ export default function Settings() {
   return (
     <div className="animate-in fade-in duration-500" data-testid="page-settings">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 py-12 md:py-16 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-8">
+      <section className="relative bg-background py-12 md:py-16 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-8">
         <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}
-        />
-        <div className="absolute inset-0 bg-slate-900/60" />
+          className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80')]
+            bg-cover bg-center opacity-20"/>
+        <div className="absolute inset-0 glass" />
         <div className="container mx-auto px-6 md:px-8 relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h1 className="text-3xl md:text-4xl mb-3">
   Hey, {user.firstName} {user.lastName}
 </h1>
 
           <nav className="text-slate-300 text-sm md:text-base" data-testid="breadcrumb-profile">
             <Link href="/">
-              <a className="hover:text-white transition-colors">Home</a>
+              <a className="hover:text-foreground transition-colors">Home</a>
             </Link>
             <span className="mx-2">/</span>
             <Link href="/student/dashboard">
-              <a className="hover:text-white transition-colors">Dashboard</a>
+              <a className="hover:text-foreground transition-colors">Dashboard</a>
             </Link>
             <span className="mx-2">/</span>
             <span className="text-white">Profile</span>
@@ -71,7 +65,7 @@ export default function Settings() {
             
             <nav className="space-y-1">
               <button
-                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-md bg-primary text-primary-foreground font-medium text-sm transition-colors"
                 data-testid="nav-profile"
               >
                 <User className="size-5" />
@@ -83,9 +77,10 @@ export default function Settings() {
 
         {/* Right Content Area */}
         <div className="flex-1 min-w-0">
-          <Card className="border-border/60 shadow-sm">
+          <Card className="border-border/60 card-hover">
+
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-heading font-bold text-foreground mb-8" data-testid="heading-profile">
+              <h2 className="text-2xl text-foreground mb-8" data-testid="heading-profile">
                 Profile
               </h2>
 
@@ -99,7 +94,7 @@ export default function Settings() {
 
     {/* Edit Button */}
     <button
-      className="absolute bottom-1 right-1 size-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors"
+      className="absolute bottom-1 right-1 size-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-brand hover:bg-primary/90 transition-colors"
       aria-label="Edit profile picture"
       data-testid="button-edit-avatar"
     >
@@ -245,15 +240,15 @@ export default function Settings() {
                   >
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="male" id="male" />
-                      <Label htmlFor="male" className="font-normal cursor-pointer">Male</Label>
+                      <Label htmlFor="male" className="cursor-pointer">Male</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="female" id="female" />
-                      <Label htmlFor="female" className="font-normal cursor-pointer">Female</Label>
+                      <Label htmlFor="female" className="cursor-pointer">Female</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="others" id="others" />
-                      <Label htmlFor="others" className="font-normal cursor-pointer">Others</Label>
+                      <Label htmlFor="others" className="cursor-pointer">Others</Label>
                     </div>
                   </RadioGroup>
                 </div>
