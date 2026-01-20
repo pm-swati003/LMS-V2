@@ -32,29 +32,30 @@ export default function MyCourses() {
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-heading font-bold">My Learning</h1>
+          <h1 className="text-3xl">My Learning</h1>
           <p className="text-muted-foreground mt-1">Track your progress and continue learning</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6">
         {MY_COURSES.map((course) => (
-          <Card key={course.id} className="border-border/50 hover:border-primary/20 transition-all">
+          <Card key={course.id} className="border-border/50 card-hover">
             <CardContent className="p-0">
               <div className="flex flex-col md:flex-row">
                 <div className="w-full md:w-64 aspect-video md:aspect-auto relative shrink-0">
                    <img 
                     src={course.image} 
                     alt={course.title}
-                    className="w-full h-full object-cover md:rounded-l-xl rounded-t-xl md:rounded-tr-none"
+                    className="w-full h-full object-cover rounded-lg md:rounded-l-lg md:rounded-tr-none"
                   />
-                  <div className="absolute inset-0 bg-black/10 md:hidden" />
+                  <div className="absolute inset-0 bg-background/20 md:hidden" />
+
                 </div>
                 
                 <div className="flex-1 p-6 flex flex-col justify-between">
                   <div>
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-heading font-bold">{course.title}</h3>
+                      <h3 className="text-xl">{course.title}</h3>
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <MoreVertical className="size-4" />
                       </Button>
@@ -71,15 +72,16 @@ export default function MyCourses() {
                         {course.progress}/{course.total} Lessons
                       </span>
                     </div>
-                    <Progress value={(course.progress / course.total) * 100} className="h-2.5" />
+                    <Progress value={(course.progress / course.total) * 100} className="h-2" />
                     
                     <div className="flex items-center justify-between pt-2">
                       <span className="text-xs text-muted-foreground">Last accessed {course.lastAccessed}</span>
-                      <Link href={`/student/course/${course.id}`}>
-                        <Button>
-                          {course.completed ? "Review Course" : "Continue Learning"}
-                        </Button>
-                      </Link>
+                      <Button asChild>
+  <Link href={`/student/course/${course.id}`}>
+    {course.completed ? "Review Course" : "Continue Learning"}
+  </Link>
+</Button>
+
                     </div>
                   </div>
                 </div>
