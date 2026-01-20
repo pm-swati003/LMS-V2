@@ -81,7 +81,7 @@ export function StudentNav() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full h-16 border-b border-border/40 bg-background/95 backdrop-blur">
+    <header className="fixed top-0 z-50 w-full h-16 glass">
       <div className="container max-w-[1500px] mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         {/* LOGO */}
        <Link href="/">
@@ -112,7 +112,7 @@ export function StudentNav() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   {link.children.map((child) => (
-                    <DropdownMenuItem key={child.name} asChild>
+                    <DropdownMenuItem key={child.name} asChild className="card-hover">
                       <Link href={child.href}>{child.name}</Link>
                     </DropdownMenuItem>
                   ))}
@@ -161,7 +161,7 @@ export function StudentNav() {
               <DropdownMenuSeparator />
               <DropdownMenuItem
                className="cursor-pointer"
-                onClick={handleProfile}>Profile</DropdownMenuItem>
+                onClick={handleProfile} >Profile</DropdownMenuItem>
               <DropdownMenuItem
                 className="text-destructive cursor-pointer"
                 onClick={handleLogout}
@@ -183,10 +183,11 @@ export function StudentNav() {
 
           <SheetContent
   side="right"
-  className="w-3/4 max-w-sm p-0"
+  className="w-3/4 max-w-sm p-0 bg-sidebar text-sidebar-foreground border-l border-sidebar-border"
 >
+
             <div className="flex justify-between items-center p-4 border-b">
-              <span className="font-bold">Menu</span>
+              <span className="font-semibold text-foreground">Menu</span>
               
             </div>
 
@@ -203,7 +204,7 @@ export function StudentNav() {
                         <Link
                           key={child.name}
                           href={child.href}
-                          className="block py-2 pl-4 text-sm"
+                          className="block py-2 pl-4 text-sm text-muted-foreground hover:text-foreground"
                         >
                           {child.name}
                         </Link>
@@ -214,7 +215,7 @@ export function StudentNav() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="block py-2 font-semibold"
+                    className="block py-2 font-semibold text-foreground hover:text-primary"
                   >
                     {link.name}
                   </Link>
