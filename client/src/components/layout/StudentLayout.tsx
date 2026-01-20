@@ -57,19 +57,21 @@ export default function StudentLayout({
       {/* OFFSET BELOW FIXED NAVBAR */}
       <div className="pt-16">
         <SidebarProvider>
-          <div className="flex min-h-[calc(100vh-4rem)] w-full bg-neutral-50">
+          <div className="flex min-h-[calc(100vh-4rem)] w-full bg-background">
 
             {/* SIDEBAR */}
             {!isSettingsPage && (
               <Sidebar
-                collapsible="icon"
-                className="border-r border-border/40 top-16 h-[calc(100vh-4rem)] shadow-[2px_0_8px_rgba(0,0,0,0.04)]"
-              >
+  collapsible="icon"
+  className="top-16 h-[calc(100vh-4rem)] bg-sidebar text-sidebar-foreground border-r border-sidebar-border shadow-brand"
+>
+
                 <SidebarHeader className="h-16 flex items-center justify-center border-b border-border/40 px-6">
                   <div className="flex items-center gap-2 font-heading font-medium text-lg w-full overflow-hidden">
-                    <span className="truncate group-data-[collapsible=icon]:hidden">
-                      Student Corner
-                    </span>
+                    <h2 className="text-lg font-semibold truncate group-data-[collapsible=icon]:hidden">
+  Student Corner
+</h2>
+
                   </div>
                 </SidebarHeader>
 
@@ -126,11 +128,12 @@ export default function StudentLayout({
             )}
 
             {/* MAIN AREA */}
-            <SidebarInset className="bg-muted/40">
-
+            <SidebarInset className="bg-background/95">
               {/* STUDENT TOP BAR (HIDDEN ON SETTINGS PAGE) */}
               {!isSettingsPage && (
-                <div className="flex h-16 items-center gap-4 border-b border-border/30 bg-neutral-50/60 px-6">
+                <div className="flex h-16 items-center gap-4 border-b border-border/30 glass px-6">
+
+
                   <SidebarTrigger />
 
                   <div className="flex-1">
@@ -139,7 +142,7 @@ export default function StudentLayout({
                       <Input
                         type="search"
                         placeholder="Search courses..."
-                        className="w-full rounded-full bg-muted pl-9 md:w-[300px] lg:w-[400px] border-none focus-visible:ring-1"
+                        className="w-full rounded-lg bg-muted pl-9 md:w-[300px] lg:w-[400px] border-none focus-visible:ring-1"
                       />
                     </div>
                   </div>
@@ -147,7 +150,7 @@ export default function StudentLayout({
                   {isDashboardPage && (
                     <Button
                       size="lg"
-                      className="shadow-lg shadow-primary/20"
+                      className="shadow-brand"
                     >
                       Resume Learning
                     </Button>
