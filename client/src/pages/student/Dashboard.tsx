@@ -17,7 +17,7 @@ export default function Dashboard() {
       {/* Welcome Section */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-heading font-bold text-foreground">Hello, Student!</h1>
+          <h1 className="text-3xl text-foreground">Hello, Student!</h1>
           <p className="text-muted-foreground mt-1">Here's your learning progress for this week.</p>
         </div>
        
@@ -26,7 +26,7 @@ export default function Dashboard() {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: "Courses in Progress", value: "4", icon: BookOpen, color: "text-blue-500", bg: "bg-blue-500/10" },
+          { label: "Courses in Progress", icon: BookOpen, color: "text-primary", bg: "bg-primary/10" },
           { label: "Completed Lessons", value: "12", icon: Trophy, color: "text-amber-500", bg: "bg-amber-500/10" },
           { label: "Learning Hours", value: "32h", icon: Clock, color: "text-emerald-500", bg: "bg-emerald-500/10" },
           { label: "Average Score", value: "85%", icon: TrendingUp, color: "text-purple-500", bg: "bg-purple-500/10" },
@@ -50,7 +50,7 @@ export default function Dashboard() {
         {/* Continue Learning - Main Column */}
         <div className="lg:col-span-2 space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-heading font-semibold">Continue Learning</h2>
+            <h2 className="text-xl">Continue Learning</h2>
             <Button variant="link" className="text-primary">View All</Button>
           </div>
 
@@ -76,7 +76,7 @@ export default function Dashboard() {
                           <MoreHorizontal className="size-4" />
                         </Button>
                       </div>
-                      <h3 className="font-heading font-semibold text-lg line-clamp-1">Advanced Prototyping with Figma</h3>
+                      <h3 className="text-lg line-clamp-1">Advanced Prototyping with Figma</h3>
                       <p className="text-sm text-muted-foreground mt-1 line-clamp-1">Master components, auto-layout, and smart animate.</p>
                     </div>
                     <div className="mt-4 space-y-2">
@@ -101,7 +101,7 @@ export default function Dashboard() {
               <div className="divide-y divide-border/40">
                 {[
                   { text: "Completed 'Intro to React'", time: "2h ago", icon: Trophy, color: "text-amber-500", bg: "bg-amber-500/10" },
-                  { text: "Started 'Advanced CSS'", time: "5h ago", icon: PlayCircle, color: "text-blue-500", bg: "bg-blue-500/10" },
+                  { text: "Started 'Advanced CSS'", time: "5h ago", icon: PlayCircle, color: "text-primary", bg: "bg-primary/10" },
                   { text: "Scored 90% in Quiz 3", time: "1d ago", icon: TrendingUp, color: "text-emerald-500", bg: "bg-emerald-500/10" },
                   { text: "Posted in Community", time: "2d ago", icon: BookOpen, color: "text-purple-500", bg: "bg-purple-500/10" },
                 ].map((item, i) => (
