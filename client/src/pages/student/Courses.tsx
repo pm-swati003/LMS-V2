@@ -65,11 +65,9 @@ export default function Courses() {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-heading font-bold">Browse Courses</h1>
+          <h1 className="text-3xl">Browse Courses</h1>
           <p className="text-muted-foreground mt-1">Discover new skills and advance your career</p>
         </div>
-        
-        
       </div>
 
       {/* Categories */}
@@ -78,7 +76,7 @@ export default function Courses() {
           <Button 
             key={cat} 
             variant={i === 0 ? "default" : "outline"} 
-            className="rounded-full whitespace-nowrap"
+            className="rounded-lg whitespace-nowrap"
             size="sm"
           >
             {cat}
@@ -90,7 +88,7 @@ export default function Courses() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {COURSES.map((course) => (
           <Link href={`/student/course/${course.id}`} key={course.id} className="block group">
-            <Card className="h-full overflow-hidden border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+            <Card className="h-full overflow-hidden border-border/50 card-hover">
               <div className="relative aspect-video overflow-hidden bg-muted">
                 <img 
                   src={course.image} 
@@ -98,7 +96,7 @@ export default function Courses() {
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
                 {course.tag && (
-                  <Badge className="absolute top-3 left-3 bg-white/90 text-black hover:bg-white font-medium shadow-sm backdrop-blur-sm">
+                  <Badge className="absolute top-3 left-3bg-card/90 text-foreground hover:bg-card border border-border font-medium shadow-sm backdrop-blur-sm">
                     {course.tag}
                   </Badge>
                 )}
@@ -106,15 +104,15 @@ export default function Courses() {
               
               <CardContent className="p-5">
                 <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                  <span className="font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">{course.category}</span>
+                  <span className="font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-md">{course.category}</span>
                   <div className="flex items-center gap-1">
-                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                    <Star className="h-3.5 w-3.5 fill-primary text-primary" />
                     <span className="text-foreground font-medium">{course.rating}</span>
                     <span>({course.students})</span>
                   </div>
                 </div>
                 
-                <h3 className="font-heading font-semibold text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg line-clamp-2 mb-2 group-hover:text-primary transition-colors">
                   {course.title}
                 </h3>
                 
@@ -135,7 +133,7 @@ export default function Courses() {
               </CardContent>
               
               <CardFooter className="p-5 pt-0 flex items-center justify-between">
-                <span className="font-bold text-lg">{course.price}</span>
+                <span className="font-semibold text-lg">{course.price}</span>
                 <Button size="sm" variant="secondary" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   View Details
                 </Button>
